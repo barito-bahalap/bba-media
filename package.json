@@ -8,30 +8,32 @@
     "build": "tsc -b && vite build",
     "typecheck": "tsc -b",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "update:kit": "pnpm update \"@barito-bahalap/*\" --latest"
   },
   "dependencies": {
-    "@barito-bahalap/assets": "*",
-    "@barito-bahalap/components": "*",
-    "@barito-bahalap/config": "1.0.3",
-    "@barito-bahalap/contexts": "*",
-    "@barito-bahalap/icons": "*",
-    "@barito-bahalap/styles": "*",
-    "@barito-bahalap/supabase": "*",
-    "@barito-bahalap/types": "*",
-    "@barito-bahalap/utils": "*",
+    "@barito-bahalap/assets": "^1.0.0",
+    "@barito-bahalap/components": "^1.1.2",
+    "@barito-bahalap/config": "^1.0.3",
+    "@barito-bahalap/contexts": "^1.0.3",
+    "@barito-bahalap/icons": "^1.1.2",
+    "@barito-bahalap/styles": "^1.1.2",
+    "@barito-bahalap/supabase": "^1.0.3",
+    "@barito-bahalap/types": "^1.0.5",
+    "@barito-bahalap/utils": "^1.1.3",
     "@tanstack/react-query": "^5.101.2",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router-dom": "^7.18.4"
   },
   "devDependencies": {
-    "@barito-bahalap/ts-config": "*",
-    "@types/node": "^24.0.0",
-    "@types/react": "^19.2.0",
-    "@types/react-dom": "^19.2.0",
-    "@vitejs/plugin-react": "^5.0.0",
-    "typescript": "^6.0.0",
-    "vite": "^7.0.0"
-  }
+    "@barito-bahalap/ts-config": "^1.0.2",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  },
+  "packageManager": "pnpm@12.10.1"
 }
