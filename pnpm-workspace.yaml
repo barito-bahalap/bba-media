@@ -1,4 +1,4 @@
 allowBuilds:
   esbuild: false
 minimumReleaseAgeExclude:
-  - '@barito-bahalap/config@1.0.3'
+  - "@barito-bahalap/*"
