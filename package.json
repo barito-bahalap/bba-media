@@ -14,7 +14,7 @@
   "dependencies": {
     "@barito-bahalap/assets": "^1.0.0",
     "@barito-bahalap/components": "^1.1.2",
-    "@barito-bahalap/config": "^1.0.3",
+    "@barito-bahalap/config": "^1.1.0",
     "@barito-bahalap/contexts": "^1.0.3",
     "@barito-bahalap/icons": "^1.1.2",
     "@barito-bahalap/styles": "^1.1.2",
