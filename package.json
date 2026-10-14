@@ -12,7 +12,7 @@
     "update:kit": "pnpm update \"@barito-bahalap/*\" --latest"
   },
   "dependencies": {
-    "@barito-bahalap/components": "^1.7.1",
+    "@barito-bahalap/components": "^1.8.1",
     "@barito-bahalap/config": "^1.1.0",
     "@barito-bahalap/contexts": "^1.0.4",
     "@barito-bahalap/icons": "^1.1.2",
