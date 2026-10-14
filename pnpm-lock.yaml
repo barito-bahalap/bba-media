@@ -173,8 +173,8 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(react-dom@19.3.0(react@19.3.0))(react-router-dom@7.18.4(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
       '@barito-bahalap/config':
-        specifier: ^1.0.3
-        version: 1.0.3(react@19.3.0)
+        specifier: ^1.1.0
+        version: 1.1.0(react@19.3.0)
       '@barito-bahalap/contexts':
         specifier: ^1.0.3
         version: 1.0.3(react@19.3.0)
@@ -240,8 +240,8 @@ packages:
       react-dom: ^18 || ^19
       react-router-dom: ^6 || ^7
 
-  '@barito-bahalap/config@1.0.3':
-    resolution: {integrity: sha512-OdHICzgahxrNj7yk7PHinz9NWytCI0wHDOsXA5pusReG8ehvNMEpRsEj1UayQtZ6kGfsUXvz23UUy6z1weDrsQ==, tarball: https://npm.pkg.github.com/download/@barito-bahalap/config/1.0.3/34787e467c61d0537ab91d70669e436ce08cb963}
+  '@barito-bahalap/config@1.1.0':
+    resolution: {integrity: sha512-N0LRK5wga7wcGKQSIp7EFCrSX2DrQoOqKpmoCE7RENCcxqSbzgU4douje37qsO+128HHSzkTlAsqnXnOMAaG6A==, tarball: https://npm.pkg.github.com/download/@barito-bahalap/config/1.1.0/495c33980a7d1a3dbc4c794b29da7e61e23f3d40}
 
   '@barito-bahalap/contexts@1.0.3':
     resolution: {integrity: sha512-2IqQL0M0OK5qgVP64UA4c0bZF+CRPmBs37j4k197VHp8JXt7akDse2vcIQ6rbl7e5uuOqS4JEctejDzyMNoY0w==, tarball: https://npm.pkg.github.com/download/@barito-bahalap/contexts/1.0.3/d7e52e1defd8aec21914be4734e4f6f48b7c5ab1}
@@ -824,14 +824,14 @@ snapshots:
 
   '@barito-bahalap/components@1.1.2(react-dom@19.3.0(react@19.3.0))(react-router-dom@7.18.4(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)':
     dependencies:
-      '@barito-bahalap/config': 1.0.3(react@19.3.0)
+      '@barito-bahalap/config': 1.1.0(react@19.3.0)
       '@barito-bahalap/icons': 1.1.2(react@19.3.0)
       '@barito-bahalap/types': 1.0.5(react@19.3.0)
       react: 19.3.0
       react-dom: 19.3.0(react@19.3.0)
       react-router-dom: 7.18.4(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
 
-  '@barito-bahalap/config@1.0.3(react@19.3.0)':
+  '@barito-bahalap/config@1.1.0(react@19.3.0)':
     dependencies:
       '@barito-bahalap/types': 1.0.5(react@19.3.0)
     transitivePeerDependencies:
