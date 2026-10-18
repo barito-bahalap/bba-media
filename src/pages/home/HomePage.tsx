@@ -1,39 +1,38 @@
 // Style
 import "./HomePage.css";
 // Hooks
-import { useSelectedIndex, useSiteContent, useWordmark } from "@/hooks";
-import { useArticles, useHomeContent, useLocale } from "@/hooks";
+import {
+  useHomeNews,
+  useSelectedIndex,
+  useSiteContent,
+  useWordmark,
+} from "@/hooks";
+import { useHomeContent, useLocale } from "@/hooks";
 // Components
 import { ClosingBand, SEO } from "@/components";
-import { BannerSection, CapabilitiesSection } from "./_components";
+import {
+  BannerSection,
+  CapabilitiesSection,
+  NewsroomSection,
+} from "./_components";
 import { MethodSection, StatementSection } from "./_components";
-import { IntroSection, JournalSection, MastheadSection } from "./_components";
+import { IntroSection, MastheadSection } from "./_components";
 // Data
 import { homeImages } from "@/data/media";
 import { HOME_LABELS } from "@/data/labels";
 // Utils
-import { formatDate } from "@/domain/format";
 import { homeSchema } from "@/domain/schema";
 
 export default function HomePage() {
   const { site, seoBase, href, layout } = useSiteContent();
   const { locale } = useLocale();
   const home = useHomeContent();
-  const { data: articles } = useArticles();
+  const news = useHomeNews();
   const { boxRef: mastRef, lines: mastLines } = useWordmark(site.name, 17);
   const { index: capabilityIndex, select: selectCapability } =
     useSelectedIndex();
   const { hero, positioning, capabilities, method, standards, closing } = home;
   const labels = HOME_LABELS[locale === "en" ? "en" : "id"];
-
-  const entries = (articles ?? []).slice(0, 3).map((article) => ({
-    id: article.id,
-    href: `/insight/${article.slug}`,
-    title: article.title,
-    category: article.category_name,
-    date: formatDate(article.published_at, locale),
-    cover: article.cover_url,
-  }));
 
   return (
     <>
@@ -88,13 +87,17 @@ export default function HomePage() {
         onSelect={selectCapability}
       />
 
-      {entries.length > 0 && (
-        <JournalSection
+      {news.lead && (
+        <NewsroomSection
           title={labels.journal}
+          today={news.today}
+          topTag={labels.topStory}
+          latestLabel={labels.latest}
           allLabel={labels.allStories}
           allHref="/insight"
-          entries={entries}
-          fallbackImages={homeImages.journal}
+          lead={news.lead}
+          side={news.side}
+          latest={news.latest}
         />
       )}
 

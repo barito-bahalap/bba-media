@@ -16,6 +16,7 @@
   --vt-gutter: 1rem;
   --vt-block: 3.5rem;
   --vt-display: "Archivo", "Arial Black", system-ui, sans-serif;
+  --vt-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
   --vt-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --vt-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 

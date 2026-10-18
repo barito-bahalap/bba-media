@@ -1,0 +1,105 @@
+.newsroom {
+  padding-block: var(--vt-block);
+}
+
+.newsroom__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding-block: 0.875rem;
+  border-top: 4px solid var(--vt-navy);
+  border-bottom: 1px solid var(--vt-navy);
+}
+
+.newsroom__title {
+  margin: 0;
+  font-family: var(--vt-serif);
+  font-size: clamp(1.75rem, 6vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-transform: none;
+}
+
+.newsroom__date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: var(--vt-ink-muted);
+  font-family: var(--vt-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.newsroom__date::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--vt-teal);
+}
+
+.newsroom__grid {
+  display: grid;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.newsroom__latest {
+  padding: 1rem;
+  background-color: var(--vt-tint);
+}
+
+.newsroom__latest-title {
+  margin: 0 0 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--vt-navy);
+  font-family: var(--vt-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.newsroom__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.newsroom__list > :first-child {
+  border-top: 0;
+}
+
+@media (min-width: 1024px) {
+  .newsroom__grid {
+    grid-template-areas: "side lead";
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr);
+    gap: 0;
+  }
+
+  .newsroom__grid.has-latest {
+    grid-template-areas: "side lead latest";
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr) minmax(0, 0.9fr);
+  }
+
+  .newsroom__side {
+    grid-area: side;
+    padding-right: 1.5rem;
+    border-right: 1px solid var(--vt-line);
+  }
+
+  .newsroom__lead {
+    grid-area: lead;
+    padding-inline: 1.5rem;
+  }
+
+  .newsroom__latest {
+    grid-area: latest;
+    align-self: start;
+  }
+}

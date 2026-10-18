@@ -27,13 +27,9 @@ export function BannerSection({
             <IndexLabel index={3} label={eyebrow} />
             <h2 className="banner__title">{heading}</h2>
             <p className="banner__body">{body}</p>
-            <Button
-              label={cta.label}
-              href={cta.href}
-              variant="outline"
-              brand="media"
-               
-            />
+            <Button href={cta.href} variant="outline" brand="media">
+              {cta.label}
+            </Button>
           </div>
         </div>
       </div>

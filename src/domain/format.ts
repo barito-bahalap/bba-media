@@ -28,3 +28,11 @@ export const splitLines = (text: string): string[] => {
   }
   return best;
 };
+
+export const formatLongDate = (iso: string, locale: string): string =>
+  new Date(iso).toLocaleDateString(locale === "en" ? "en-GB" : "id-ID", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
