@@ -1,4 +1,5 @@
 import type { SiteIdentity } from "./content";
+import type { Article } from "./articles";
 
 export function organizationSchema(site: SiteIdentity) {
   return {
@@ -7,7 +8,7 @@ export function organizationSchema(site: SiteIdentity) {
     alternateName: site.shortName,
     url: site.url,
     description: site.description,
-    foundingDate: String(site.foundingYear),
+    foundingDate: site.foundingYear ? String(site.foundingYear) : undefined,
     parentOrganization: {
       "@type": "Organization",
       name: site.holdingName,
@@ -57,5 +58,36 @@ export function breadcrumbSchema(
       name: item.name,
       item: `${site.url}${item.path}`,
     })),
+  };
+}
+
+// Generic "Article" on purpose. Switch to "NewsArticle" only once the editorial
+// structure and press-company requirements in the README are met.
+export function articlePageSchema(
+  site: SiteIdentity,
+  article: Article,
+  trail: { name: string; path: string }[],
+) {
+  const { "@context": _ctx, ...breadcrumb } = breadcrumbSchema(site, trail);
+  void _ctx;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: article.title,
+        description: article.excerpt ?? undefined,
+        image: article.cover_url ?? undefined,
+        datePublished: article.published_at,
+        dateModified: article.updated_at,
+        inLanguage: "id",
+        author: article.author_name
+          ? { "@type": "Person", name: article.author_name }
+          : undefined,
+        publisher: { "@type": "Organization", name: site.name, url: site.url },
+        mainEntityOfPage: `${site.url}/insight/${article.slug}`,
+      },
+      breadcrumb,
+    ],
   };
 }

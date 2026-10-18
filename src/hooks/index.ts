@@ -1,2 +1,5 @@
+export * from "./useLocale";
 export * from "./useMediaContent";
 export * from "./useContactForm";
+export * from "./useArticles";
+export * from "./useLanguageSwitch";

@@ -1,11 +1,17 @@
 import { useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
-// Utils
 import type {
   ContactErrors,
   ContactValues,
   InquiryType,
 } from "@/domain/content";
+
+export interface ContactMessages {
+  name: string;
+  email: string;
+  message: string;
+  consent: string;
+}
 
 const emptyValues: ContactValues = {
   name: "",
@@ -19,18 +25,12 @@ const emptyValues: ContactValues = {
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function validate(values: ContactValues): ContactErrors {
+function validate(values: ContactValues, m: ContactMessages): ContactErrors {
   const errors: ContactErrors = {};
-  if (!values.name.trim()) errors.name = "Enter your name.";
-  if (!values.organization.trim())
-    errors.organization = "Enter your organization.";
-  if (!emailPattern.test(values.email.trim()))
-    errors.email = "Enter a valid email address.";
-  if (!values.inquiryType) errors.inquiryType = "Select an inquiry type.";
-  if (values.message.trim().length < 20)
-    errors.message = "Describe the requirement in at least 20 characters.";
-  if (!values.consent)
-    errors.consent = "Consent is required to send this inquiry.";
+  if (!values.name.trim()) errors.name = m.name;
+  if (!emailPattern.test(values.email.trim())) errors.email = m.email;
+  if (values.message.trim().length < 20) errors.message = m.message;
+  if (!values.consent) errors.consent = m.consent;
   return errors;
 }
 
@@ -42,20 +42,24 @@ function buildMailto(
   const typeLabel =
     inquiryTypes.find((type) => type.value === values.inquiryType)?.label ??
     values.inquiryType;
-  const subject = `BBM inquiry: ${typeLabel} (${values.organization.trim()})`;
+  const who = values.organization.trim() || values.name.trim();
+  const subject = `BBM inquiry${typeLabel ? `: ${typeLabel}` : ""} (${who})`;
   const body = [
     `Name: ${values.name.trim()}`,
-    `Organization: ${values.organization.trim()}`,
-    `Role: ${values.role.trim() || "-"}`,
+    `Organization: ${values.organization.trim() || "-"}`,
     `Email: ${values.email.trim()}`,
-    `Inquiry type: ${typeLabel}`,
+    `Area of support: ${typeLabel || "-"}`,
     "",
     values.message.trim(),
   ].join("\n");
   return `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
-export function useContactForm(recipient: string, inquiryTypes: InquiryType[]) {
+export function useContactForm(
+  recipient: string,
+  inquiryTypes: InquiryType[],
+  messages: ContactMessages,
+) {
   const [values, setValues] = useState<ContactValues>(emptyValues);
   const [errors, setErrors] = useState<ContactErrors>({});
   const [prepared, setPrepared] = useState(false);
@@ -79,7 +83,7 @@ export function useContactForm(recipient: string, inquiryTypes: InquiryType[]) {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const nextErrors = validate(values);
+    const nextErrors = validate(values, messages);
     setErrors(nextErrors);
     if (Object.values(nextErrors).some(Boolean)) return;
     window.location.href = buildMailto(recipient, values, inquiryTypes);

@@ -19,7 +19,7 @@ export interface SiteIdentity {
   location: string;
   email: string;
   correctionsEmail: string;
-  foundingYear: number;
+  foundingYear?: number;
 }
 
 export interface HeroContent {
