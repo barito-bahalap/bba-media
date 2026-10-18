@@ -3,12 +3,13 @@ import "./AboutPage.css";
 // Hooks
 import { shortTitle, useAboutContent, useSiteContent } from "@/hooks";
 // Components
-import { Button, InfoCard, PageHero, SEO } from "@/components";
-import { Section, SectionHeader } from "@/components";
+import { Band, Button, PageHeader, SEO } from "@/components";
+import { SplitSection, Tile, TileGrid, type Tone } from "@/components";
 // Utils
+import { pickAt } from "@/domain/format";
 import { breadcrumbSchema } from "@/domain/schema";
-// Data
-import { SECTION_ALT_TONE } from "@/data/layout";
+
+const TONES: Tone[] = ["paper", "yellow", "teal"];
 
 // NOTE: `agency.units` and `agency.body` in the data name other BBA units. The repository
 // firewall (README) forbids that, so the agency block is intentionally not rendered.
@@ -30,41 +31,38 @@ export default function AboutPage() {
         ])}
       />
 
-      <PageHero
+      <PageHeader
         eyebrow={hero.eyebrow}
         title={hero.heading.join(" ")}
-        description={hero.body}
+        body={hero.body}
+        tone="indigo"
       />
 
-      <Section>
-        <div className="grid-split">
-          <SectionHeader title={story.heading} />
-          <div className="stack">
-            {story.paragraphs.map((paragraph) => (
-              <p key={paragraph} className="prose-block">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </div>
-      </Section>
+      <SplitSection title={story.heading}>
+        {story.paragraphs.map((paragraph) => (
+          <p key={paragraph} className="vt-prose">
+            {paragraph}
+          </p>
+        ))}
+      </SplitSection>
 
-      <Section tone={SECTION_ALT_TONE}>
-        <div className="grid-cards grid-cards--3">
-          {values.map((value) => (
-            <InfoCard
+      <Band tone="tint">
+        <TileGrid columns={3}>
+          {values.map((value, index) => (
+            <Tile
               key={value.title}
               title={value.title}
-              description={value.body}
+              body={value.body}
+              tone={pickAt(TONES, index)}
             />
           ))}
-        </div>
-        <p>
+        </TileGrid>
+        <div>
           <Button href={cta.href} variant="primary" brand="media">
             {cta.label}
           </Button>
-        </p>
-      </Section>
+        </div>
+      </Band>
     </>
   );
 }

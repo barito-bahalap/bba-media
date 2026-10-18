@@ -4,6 +4,7 @@
   width: min(100%, 17rem);
   padding: 1rem;
   background-color: var(--vt-paper);
+  border-top: 4px solid var(--vt-yellow);
   border-radius: var(--vt-radius);
 }
 

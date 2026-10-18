@@ -42,7 +42,7 @@
   align-items: flex-end;
   min-height: 24rem;
   overflow: hidden;
-  background-color: var(--vt-navy);
+  background-color: var(--vt-teal);
 }
 
 .intro__img {

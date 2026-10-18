@@ -128,3 +128,80 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+
+:root[data-theme="media-editorial"] {
+  --vt-bg: var(--vt-paper);
+  --vt-fg: var(--vt-navy);
+  --vt-muted: var(--vt-ink-muted);
+  --vt-soft: var(--vt-ink-soft);
+  --vt-rule: var(--vt-line);
+}
+
+.vt-tone {
+  background-color: var(--vt-bg);
+  color: var(--vt-fg);
+}
+
+.vt-tone :is(h1, h2, h3, h4) {
+  color: inherit;
+}
+
+.vt-tone--paper {
+  --vt-bg: var(--vt-paper);
+}
+
+.vt-tone--tint {
+  --vt-bg: var(--vt-tint);
+}
+
+.vt-tone--teal {
+  --vt-bg: var(--vt-teal);
+  --vt-fg: #fff;
+  --vt-muted: rgba(255, 255, 255, 0.75);
+  --vt-soft: rgba(255, 255, 255, 0.88);
+  --vt-rule: rgba(255, 255, 255, 0.3);
+}
+
+.vt-tone--yellow {
+  --vt-bg: var(--vt-yellow);
+  --vt-muted: rgba(3, 1, 100, 0.65);
+  --vt-soft: rgba(3, 1, 100, 0.8);
+  --vt-rule: rgba(3, 1, 100, 0.25);
+}
+
+.vt-tone--indigo {
+  --vt-bg: var(--vt-indigo);
+  --vt-fg: #fff;
+  --vt-muted: rgba(255, 255, 255, 0.7);
+  --vt-soft: rgba(255, 255, 255, 0.86);
+  --vt-rule: rgba(255, 255, 255, 0.28);
+}
+
+.vt-tone--navy {
+  --vt-bg: var(--vt-navy);
+  --vt-fg: #fff;
+  --vt-muted: rgba(255, 255, 255, 0.65);
+  --vt-soft: rgba(255, 255, 255, 0.82);
+  --vt-rule: rgba(255, 255, 255, 0.22);
+}
+
+.vt-note {
+  margin: 0;
+  color: var(--vt-muted);
+  font-size: 0.875rem;
+}
+
+.vt-section-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 6vw, 2.75rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.vt-prose {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--vt-soft);
+  font-size: 1rem;
+  line-height: 1.7;
+}

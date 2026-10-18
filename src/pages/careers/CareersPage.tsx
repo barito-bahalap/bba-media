@@ -3,12 +3,13 @@ import "./CareersPage.css";
 // Hooks
 import { shortTitle, useCareersContent, useSiteContent } from "@/hooks";
 // Components
-import { Button, InfoCard, PageHero, SEO } from "@/components";
-import { Section, SectionHeader } from "@/components";
+import { Button, PageHeader, SEO } from "@/components";
+import { SplitSection, Tile, TileGrid, type Tone } from "@/components";
 // Utils
+import { pickAt } from "@/domain/format";
 import { breadcrumbSchema } from "@/domain/schema";
-// Data
-import { SECTION_ALT_TONE } from "@/data/layout";
+
+const TONES: Tone[] = ["tint", "yellow", "teal", "paper"];
 
 export default function CareersPage() {
   const { site, seoBase, href } = useSiteContent();
@@ -28,42 +29,42 @@ export default function CareersPage() {
         ])}
       />
 
-      <PageHero
+      <PageHeader
         eyebrow={hero.eyebrow}
         title={hero.heading.join(" ")}
-        description={hero.body}
+        body={hero.body}
+        tone="navy"
       />
 
-      <Section>
-        <SectionHeader title={intro.heading} intro={intro.body} />
-        <div className="grid-cards">
-          {profiles.map((profile) => (
-            <InfoCard
+      <SplitSection title={intro.heading} body={intro.body}>
+        <TileGrid>
+          {profiles.map((profile, index) => (
+            <Tile
               key={profile.title}
               title={profile.title}
-              description={profile.description}
+              body={profile.description}
+              tone={pickAt(TONES, index)}
             />
           ))}
-        </div>
-      </Section>
+        </TileGrid>
+      </SplitSection>
 
-      <Section tone={SECTION_ALT_TONE}>
-        <div className="grid-split">
-          <SectionHeader title={application.heading} intro={application.body} />
-          <div className="stack">
-            <p>
-              <Button
-                href={`mailto:${application.email}?subject=${encodeURIComponent("BBM careers: introduction")}`}
-                variant="outline"
-                brand="media"
-              >
-                {application.emailLabel}
-              </Button>
-            </p>
-            <p className="prose-block">{application.note}</p>
-          </div>
+      <SplitSection
+        tone="yellow"
+        title={application.heading}
+        body={application.body}
+      >
+        <div>
+          <Button
+            href={`mailto:${application.email}?subject=${encodeURIComponent("BBM careers: introduction")}`}
+            variant="primary"
+            brand="media"
+          >
+            {application.emailLabel}
+          </Button>
         </div>
-      </Section>
+        <p className="vt-prose">{application.note}</p>
+      </SplitSection>
     </>
   );
 }

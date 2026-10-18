@@ -33,9 +33,12 @@ export const layout = {
       {
         title: "Agency",
         links: [
-          { label: "About", href: "/about" },
+          { label: "Beranda", href: "/" },
+          { label: "Services", href: "/services" },
           { label: "Approach", href: "/approach" },
           { label: "Standards", href: "/standards" },
+          { label: "About", href: "/about" },
+          { label: "Insights", href: "/insight" },
         ],
       },
       {

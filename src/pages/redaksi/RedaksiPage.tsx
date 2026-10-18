@@ -3,19 +3,15 @@ import "./RedaksiPage.css";
 // Hooks
 import { useNewsroomSettings, useSiteContent } from "@/hooks";
 // Components
-import {
-  Button,
-  Callout,
-  InfoCard,
-  PageHero,
-  SEO,
-  Section,
-} from "@/components";
+import { Band, Button, DefinitionList, PageHeader, SEO } from "@/components";
+import { SplitSection, Tile, TileGrid, type Tone } from "@/components";
 // Data
 import { redaksiIntro, redaksiPolicies } from "@/data/redaksi";
-import { SECTION_ALT_TONE } from "@/data/layout";
 // Utils
+import { pickAt } from "@/domain/format";
 import { breadcrumbSchema } from "@/domain/schema";
+
+const TONES: Tone[] = ["paper", "teal", "yellow", "paper"];
 
 export default function RedaksiPage() {
   const { site, seoBase } = useSiteContent();
@@ -36,57 +32,57 @@ export default function RedaksiPage() {
         ])}
       />
 
-      <PageHero {...redaksiIntro} />
+      <PageHeader
+        eyebrow={redaksiIntro.eyebrow}
+        title={redaksiIntro.title}
+        body={redaksiIntro.description}
+        tone="indigo"
+      />
 
-      <Section>
-        <h2>Susunan redaksi</h2>
-        <dl className="masthead">
-          <div className="masthead__row">
-            <dt>Penerbit</dt>
-            <dd>{settings?.legal_entity_name ?? site.holdingName}</dd>
-          </div>
-          <div className="masthead__row">
-            <dt>Pemimpin Redaksi</dt>
-            <dd>{chief ?? "Akan diumumkan sebelum publikasi dimulai"}</dd>
-          </div>
-          <div className="masthead__row">
-            <dt>Alamat</dt>
-            <dd>{site.location}</dd>
-          </div>
-        </dl>
-      </Section>
+      <SplitSection title="Susunan redaksi">
+        <DefinitionList
+          rows={[
+            {
+              term: "Penerbit",
+              value: settings?.legal_entity_name ?? site.holdingName,
+            },
+            {
+              term: "Pemimpin Redaksi",
+              value: chief ?? "Akan diumumkan sebelum publikasi dimulai",
+            },
+            { term: "Alamat", value: site.location },
+          ]}
+        />
+      </SplitSection>
 
-      <Section tone={SECTION_ALT_TONE}>
-        <div className="grid-cards">
-          {redaksiPolicies.map((item) => (
-            <InfoCard
+      <Band tone="tint">
+        <TileGrid>
+          {redaksiPolicies.map((item, index) => (
+            <Tile
               key={item.title}
               title={item.title}
-              description={item.text}
+              body={item.text}
+              tone={pickAt(TONES, index)}
             />
           ))}
-        </div>
-      </Section>
+        </TileGrid>
+      </Band>
 
-      <Section>
-        <Callout
-          title="Pengaduan, koreksi dan hak jawab"
-          action={
-            <Button
-              href={`mailto:${correctionEmail}?subject=${encodeURIComponent("Permintaan koreksi / hak jawab")}`}
-              variant="outline"
-              brand="media"
-            >
-              Hubungi redaksi
-            </Button>
-          }
-        >
-          <p>
-            Sertakan tautan artikel, bagian yang dipersoalkan dan data
-            pendukung.
-          </p>
-        </Callout>
-      </Section>
+      <SplitSection
+        tone="yellow"
+        title="Pengaduan, koreksi dan hak jawab"
+        body="Sertakan tautan artikel, bagian yang dipersoalkan dan data pendukung."
+      >
+        <div>
+          <Button
+            href={`mailto:${correctionEmail}?subject=${encodeURIComponent("Permintaan koreksi / hak jawab")}`}
+            variant="primary"
+            brand="media"
+          >
+            Hubungi redaksi
+          </Button>
+        </div>
+      </SplitSection>
     </>
   );
 }

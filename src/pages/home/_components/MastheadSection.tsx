@@ -1,14 +1,16 @@
+import type { RefObject } from "react";
 // Style
 import "./MastheadSection.css";
 // Components
 import { Wordmark } from "@/components";
 
 interface MastheadSectionProps {
-  wordmark: string;
+  boxRef: RefObject<HTMLDivElement | null>;
+  lines: string[];
   meta: string[];
 }
 
-export function MastheadSection({ wordmark, meta }: MastheadSectionProps) {
+export function MastheadSection({ boxRef, lines, meta }: MastheadSectionProps) {
   return (
     <section className="masthead">
       <div className="vt-wrap masthead__inner">
@@ -17,7 +19,7 @@ export function MastheadSection({ wordmark, meta }: MastheadSectionProps) {
             <li key={item}>{item}</li>
           ))}
         </ul>
-        <Wordmark text={wordmark} />
+        <Wordmark boxRef={boxRef} lines={lines} />
       </div>
     </section>
   );

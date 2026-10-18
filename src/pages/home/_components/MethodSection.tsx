@@ -17,7 +17,7 @@ export function MethodSection({
   cta,
 }: MethodSectionProps) {
   return (
-    <section className="method">
+    <section className="method vt-tone vt-tone--yellow">
       <div className="vt-wrap method__inner">
         <div className="method__lead">
           <IndexLabel index={6} label={eyebrow} />

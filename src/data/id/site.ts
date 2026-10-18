@@ -12,6 +12,7 @@ export const site = {
   email: "media@baritobahalap.com",
 
   navigation: [
+    { label: "Beranda", href: "/" },
     { label: "Layanan", href: "/services" },
     { label: "Pendekatan", href: "/approach" },
     { label: "Standar", href: "/standards" },

@@ -6,6 +6,7 @@
 .capability.is-active {
   border-left-color: var(--vt-navy);
   background-color: var(--vt-paper);
+  color: var(--vt-navy);
 }
 
 .capability__head {
@@ -17,7 +18,7 @@
   padding: 1rem;
   border: 0;
   background: transparent;
-  color: var(--vt-navy);
+  color: inherit;
   font: inherit;
   text-align: left;
   cursor: pointer;
@@ -27,7 +28,7 @@
   font-family: var(--vt-mono);
   font-size: 0.5625rem;
   letter-spacing: 0.08em;
-  color: var(--vt-ink-muted);
+  color: var(--vt-muted);
 }
 
 .capability__title {
@@ -48,4 +49,8 @@
   color: var(--vt-ink-soft);
   font-size: 0.8125rem;
   line-height: 1.6;
+}
+
+.capability.is-active .capability__number {
+  color: var(--vt-ink-muted);
 }

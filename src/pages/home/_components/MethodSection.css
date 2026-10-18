@@ -1,6 +1,5 @@
 .method {
   padding-block: var(--vt-block);
-  background-color: var(--vt-tint);
 }
 
 .method__inner {
@@ -32,7 +31,7 @@
 
 .method__body {
   margin: 0;
-  color: var(--vt-ink-soft);
+  color: var(--vt-soft);
   font-size: 0.875rem;
   line-height: 1.6;
 }

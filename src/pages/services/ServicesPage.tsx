@@ -3,12 +3,13 @@ import "./ServicesPage.css";
 // Hooks
 import { shortTitle, useServicesContent, useSiteContent } from "@/hooks";
 // Components
-import { Checklist, ClosingBand, PageHero, SEO } from "@/components";
-import { Section, SectionHeader } from "@/components";
+import { SEO, SplitSection, type Tone } from "@/components";
+import { BulletList, ClosingBand, PageHeader } from "@/components";
 // Utils
+import { pickAt } from "@/domain/format";
 import { breadcrumbSchema } from "@/domain/schema";
-// Data
-import { SECTION_ALT_TONE } from "@/data/layout";
+
+const TONES: Tone[] = ["paper", "tint", "paper", "yellow"];
 
 export default function ServicesPage() {
   const { site, seoBase, href } = useSiteContent();
@@ -28,33 +29,28 @@ export default function ServicesPage() {
         ])}
       />
 
-      <PageHero
+      <PageHeader
         eyebrow={hero.eyebrow}
         title={hero.heading.join(" ")}
-        description={hero.body}
+        body={hero.body}
+        tone="tint"
       />
 
-      <Section>
-        <SectionHeader title={intro.heading} intro={intro.body} />
-      </Section>
+      <SplitSection title={intro.heading} body={intro.body} />
 
       {items.map((service, index) => (
-        <Section
+        <SplitSection
           key={service.id}
-          tone={index % 2 === 0 ? SECTION_ALT_TONE : undefined}
+          id={service.id}
+          tone={pickAt(TONES, index)}
+          index={Number(service.number) || index + 1}
+          label={service.title}
+          title={service.title}
+          body={service.summary}
         >
-          <div id={service.id} className="grid-split">
-            <SectionHeader
-              eyebrow={service.number}
-              title={service.title}
-              intro={service.summary}
-            />
-            <div className="service-block">
-              <Checklist items={[...service.deliverables]} />
-              <p className="service-block__note">{service.outcome}</p>
-            </div>
-          </div>
-        </Section>
+          <BulletList items={service.deliverables} />
+          <p className="vt-note">{service.outcome}</p>
+        </SplitSection>
       ))}
 
       <ClosingBand

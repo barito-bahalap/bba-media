@@ -1,0 +1,37 @@
+.tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: 12rem;
+  padding: 1.25rem;
+  border: 1px solid var(--vt-rule);
+  border-radius: var(--vt-radius);
+}
+
+.tile__number {
+  font-family: var(--vt-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.tile__text {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.tile__title {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.tile__body {
+  margin: 0;
+  color: var(--vt-soft);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}

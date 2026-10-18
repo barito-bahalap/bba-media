@@ -1,7 +1,7 @@
 // Style
 import "./Footer.css";
 // Hooks
-import { useLanguageSwitch, useSiteContent } from "@/hooks";
+import { useLanguageSwitch, useSiteContent, useWordmark } from "@/hooks";
 // Components
 import { LanguageSwitcher, SmartLink, Wordmark } from "@/components";
 import { Brand } from "./Brand";
@@ -9,6 +9,7 @@ import { Brand } from "./Brand";
 export function Footer() {
   const { site, footerGroups, layout } = useSiteContent();
   const languageItems = useLanguageSwitch();
+  const { boxRef, lines } = useWordmark(site.shortName, 11);
 
   return (
     <footer className="footer">
@@ -51,7 +52,7 @@ export function Footer() {
       </div>
 
       <div className="vt-wrap footer__mark">
-        <Wordmark text={site.shortName} />
+        <Wordmark boxRef={boxRef} lines={lines} />
       </div>
 
       <div className="vt-wrap footer__legal">

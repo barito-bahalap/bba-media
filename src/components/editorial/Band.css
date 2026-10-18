@@ -1,0 +1,8 @@
+.band {
+  padding-block: var(--vt-block);
+}
+
+.band__inner {
+  display: grid;
+  gap: 2rem;
+}

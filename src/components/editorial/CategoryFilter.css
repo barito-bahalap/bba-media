@@ -1,0 +1,26 @@
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter__pill {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--vt-navy);
+  border-radius: 999px;
+  color: var(--vt-navy);
+  font-family: var(--vt-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.filter__pill:hover {
+  background-color: var(--vt-yellow);
+}
+
+.filter__pill.is-active {
+  background-color: var(--vt-navy);
+  color: #fff;
+}

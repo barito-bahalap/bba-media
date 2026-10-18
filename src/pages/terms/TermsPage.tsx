@@ -17,6 +17,7 @@ export default function TermsPage() {
         description={terms.description}
         path={href("/terms")}
       />
+
       <LegalDocument
         title={terms.title}
         updated={terms.updated}

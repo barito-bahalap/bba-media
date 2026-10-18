@@ -2,11 +2,11 @@ import { useMemo } from "react";
 // Style
 import "./ContactPage.css";
 // Hooks
-import { shortTitle, useContactContent, useSiteContent } from "@/hooks";
-import { useContactForm } from "@/hooks";
+import { shortTitle, useContactContent } from "@/hooks";
+import { useContactForm, useSiteContent } from "@/hooks";
 // Components
-import { Checkbox, Input, Select, Textarea } from "@/components";
-import { Button, PageHero, SEO, Section, SectionHeader } from "@/components";
+import { Select, SplitSection, Textarea } from "@/components";
+import { Button, Checkbox, Input, PageHeader, SEO } from "@/components";
 // Utils
 import { breadcrumbSchema } from "@/domain/schema";
 
@@ -56,16 +56,18 @@ export default function ContactPage() {
         ])}
       />
 
-      <PageHero
+      <PageHeader
         eyebrow={hero.eyebrow}
         title={hero.heading.join(" ")}
-        description={hero.body}
+        body={hero.body}
+        tone="yellow"
       />
 
-      <Section>
-        <div className="grid-split">
-          <div className="stack">
-            <SectionHeader title={details.heading} intro={details.body} />
+      <SplitSection
+        title={details.heading}
+        body={details.body}
+        aside={
+          <>
             <p className="form-note">
               {details.emailLabel}:{" "}
               <a href={`mailto:${details.email}`}>{details.email}</a>
@@ -73,80 +75,80 @@ export default function ContactPage() {
             <p className="form-note">
               {details.parentLabel}: {details.parentName}
             </p>
-          </div>
-
-          <form className="form-grid" onSubmit={handleSubmit} noValidate>
-            <h2>{form.heading}</h2>
-            <div className="form-grid__row">
-              <Input
-                id="name"
-                name="name"
-                label={fields.name.label}
-                autoComplete="name"
-                required
-                value={values.name}
-                error={errors.name}
-                onChange={handleChange}
-              />
-              <Input
-                id="organization"
-                name="organization"
-                label={fields.organization.label}
-                autoComplete="organization"
-                value={values.organization}
-                error={errors.organization}
-                onChange={handleChange}
-              />
-            </div>
+          </>
+        }
+      >
+        <form className="form-grid" onSubmit={handleSubmit} noValidate>
+          <h2 className="vt-section-title">{form.heading}</h2>
+          <div className="form-grid__row">
             <Input
-              id="email"
-              name="email"
-              type="email"
-              label={fields.email.label}
-              autoComplete="email"
+              id="name"
+              name="name"
+              label={fields.name.label}
+              autoComplete="name"
               required
-              value={values.email}
-              error={errors.email}
+              value={values.name}
+              error={errors.name}
               onChange={handleChange}
             />
-            <Select
-              id="inquiryType"
-              name="inquiryType"
-              label={fields.service.label}
-              options={inquiryOptions}
-              value={values.inquiryType}
-              error={errors.inquiryType}
+            <Input
+              id="organization"
+              name="organization"
+              label={fields.organization.label}
+              autoComplete="organization"
+              value={values.organization}
+              error={errors.organization}
               onChange={handleChange}
             />
-            <Textarea
-              id="message"
-              name="message"
-              label={fields.message.label}
-              rows={6}
-              required
-              value={values.message}
-              error={errors.message}
-              onChange={handleChange}
-            />
-            <Checkbox
-              id="consent"
-              label={form.consent}
-              checked={values.consent}
-              error={errors.consent}
-              onChange={handleConsent}
-            />
-            <div>
-              <Button type="submit" variant="primary" brand="media">
-                {form.submit}
-              </Button>
-            </div>
-            {/* Opens the visitor's mail app. form.success/error need a real backend submit. */}
-            <p className="form-note" aria-live="polite">
-              {prepared ? details.email : form.privacyNote}
-            </p>
-          </form>
-        </div>
-      </Section>
+          </div>
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            label={fields.email.label}
+            autoComplete="email"
+            required
+            value={values.email}
+            error={errors.email}
+            onChange={handleChange}
+          />
+          <Select
+            id="inquiryType"
+            name="inquiryType"
+            label={fields.service.label}
+            options={inquiryOptions}
+            value={values.inquiryType}
+            error={errors.inquiryType}
+            onChange={handleChange}
+          />
+          <Textarea
+            id="message"
+            name="message"
+            label={fields.message.label}
+            rows={6}
+            required
+            value={values.message}
+            error={errors.message}
+            onChange={handleChange}
+          />
+          <Checkbox
+            id="consent"
+            label={form.consent}
+            checked={values.consent}
+            error={errors.consent}
+            onChange={handleConsent}
+          />
+          <div>
+            <Button type="submit" variant="primary" brand="media">
+              {form.submit}
+            </Button>
+          </div>
+          {/* Opens the visitor's mail app. form.success/error need a real backend submit. */}
+          <p className="form-note" aria-live="polite">
+            {prepared ? details.email : form.privacyNote}
+          </p>
+        </form>
+      </SplitSection>
     </>
   );
 }

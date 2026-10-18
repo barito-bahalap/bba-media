@@ -1,7 +1,5 @@
 .closing {
   padding-block: var(--vt-block);
-  background-color: var(--vt-navy);
-  color: #fff;
 }
 
 .closing__inner {
@@ -32,7 +30,7 @@
 
 .closing__body {
   margin: 0;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--vt-soft);
   font-size: 0.875rem;
   line-height: 1.6;
 }
@@ -49,7 +47,7 @@
 }
 
 .closing__contact span {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--vt-muted);
   font-family: var(--vt-mono);
   font-size: 0.625rem;
   letter-spacing: 0.1em;

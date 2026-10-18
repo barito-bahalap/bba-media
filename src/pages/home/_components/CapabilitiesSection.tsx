@@ -30,7 +30,7 @@ export function CapabilitiesSection({
   const active = pickAt(items, selected);
 
   return (
-    <section className="capabilities">
+    <section className="capabilities vt-tone vt-tone--teal">
       <div className="vt-wrap capabilities__inner">
         <div className="capabilities__head">
           <IndexLabel index={4} label={eyebrow} />

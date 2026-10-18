@@ -33,9 +33,12 @@ export const layout = {
       {
         title: "Agensi",
         links: [
-          { label: "Tentang", href: "/about" },
+          { label: "Beranda", href: "/" },
+          { label: "Layanan", href: "/services" },
           { label: "Pendekatan", href: "/approach" },
           { label: "Standar", href: "/standards" },
+          { label: "Tentang", href: "/about" },
+          { label: "Insight", href: "/insight" },
         ],
       },
       {

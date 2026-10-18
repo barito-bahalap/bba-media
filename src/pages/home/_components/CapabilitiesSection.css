@@ -1,6 +1,5 @@
 .capabilities {
   padding-block: var(--vt-block);
-  background-color: var(--vt-tint);
 }
 
 .capabilities__inner {

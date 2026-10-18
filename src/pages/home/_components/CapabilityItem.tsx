@@ -2,7 +2,7 @@
 import "./CapabilityItem.css";
 
 interface CapabilityItemProps {
-  number: string | number;
+  number: string;
   title: string;
   body: string;
   active: boolean;

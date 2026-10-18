@@ -1,20 +1,25 @@
-import type { CSSProperties } from "react";
+import type { RefObject } from "react";
 // Style
 import "./Wordmark.css";
 
 interface WordmarkProps {
-  text: string;
-  tone?: "navy" | "light";
+  boxRef: RefObject<HTMLDivElement | null>;
+  lines: string[];
+  tone?: "navy" | "light" | "teal";
 }
 
-export function Wordmark({ text, tone = "navy" }: WordmarkProps) {
-  const style = { "--vt-chars": text.length } as CSSProperties;
-
+export function Wordmark({ boxRef, lines, tone = "navy" }: WordmarkProps) {
   return (
-    <div className={`vt-wordmark vt-wordmark--${tone}`} aria-hidden="true">
-      <span className="vt-wordmark__text" style={style}>
-        {text}
-      </span>
+    <div
+      ref={boxRef}
+      className={`vt-wordmark vt-wordmark--${tone}`}
+      aria-hidden="true"
+    >
+      {lines.map((line) => (
+        <span key={line} className="vt-wordmark__line" data-line>
+          {line}
+        </span>
+      ))}
     </div>
   );
 }

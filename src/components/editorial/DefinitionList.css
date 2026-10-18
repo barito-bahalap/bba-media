@@ -1,0 +1,32 @@
+.deflist {
+  display: grid;
+  margin: 0;
+}
+
+.deflist__row {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--vt-rule);
+}
+
+.deflist__term {
+  color: var(--vt-muted);
+  font-family: var(--vt-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.deflist__value {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (min-width: 640px) {
+  .deflist__row {
+    grid-template-columns: 12rem 1fr;
+    gap: 1.5rem;
+  }
+}

@@ -1,8 +1,7 @@
 // Style
 import "./JournalSection.css";
 // Components
-import { Button, IndexLabel } from "@/components";
-import { ArticleCard } from "./ArticleCard";
+import { ArticleCard, Button, IndexLabel } from "@/components";
 // Utils
 import { pickAt } from "@/domain/format";
 

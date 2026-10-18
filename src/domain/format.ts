@@ -9,3 +9,22 @@ export const formatDate = (iso: string, locale: string): string =>
     month: "short",
     year: "numeric",
   });
+
+export const splitLines = (text: string): string[] => {
+  const clean = text.trim();
+  const words = clean.split(/\s+/);
+  if (words.length < 3 || clean.length <= 8) return [clean];
+
+  let best = [clean];
+  let bestMax = clean.length;
+  for (let i = 2; i < words.length; i += 1) {
+    const head = words.slice(0, i).join(" ");
+    const tail = words.slice(i).join(" ");
+    const longest = Math.max(head.length, tail.length);
+    if (longest < bestMax) {
+      bestMax = longest;
+      best = [head, tail];
+    }
+  }
+  return best;
+};

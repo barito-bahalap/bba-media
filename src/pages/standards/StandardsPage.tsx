@@ -3,10 +3,13 @@ import "./StandardsPage.css";
 // Hooks
 import { shortTitle, useSiteContent, useStandardsContent } from "@/hooks";
 // Components
-import { ClosingBand, InfoCard, PageHero, SEO } from "@/components";
-import { Section } from "@/components";
+import { Band, ClosingBand, PageHeader, SEO } from "@/components";
+import { Tile, TileGrid, type Tone } from "@/components";
 // Utils
+import { pickAt } from "@/domain/format";
 import { breadcrumbSchema } from "@/domain/schema";
+
+const TONES: Tone[] = ["tint", "paper", "teal", "paper", "yellow", "tint"];
 
 export default function StandardsPage() {
   const { site, seoBase, href } = useSiteContent();
@@ -26,23 +29,26 @@ export default function StandardsPage() {
         ])}
       />
 
-      <PageHero
+      <PageHeader
         eyebrow={hero.eyebrow}
         title={hero.heading.join(" ")}
-        description={hero.body}
+        body={hero.body}
+        tone="teal"
       />
 
-      <Section>
-        <div className="grid-cards">
-          {items.map((item) => (
-            <InfoCard
+      <Band tone="paper">
+        <TileGrid columns={3}>
+          {items.map((item, index) => (
+            <Tile
               key={item.number}
-              title={`${item.number}. ${item.title}`}
-              description={item.body}
+              number={item.number}
+              title={item.title}
+              body={item.body}
+              tone={pickAt(TONES, index)}
             />
           ))}
-        </div>
-      </Section>
+        </TileGrid>
+      </Band>
 
       <ClosingBand {...closing} />
     </>

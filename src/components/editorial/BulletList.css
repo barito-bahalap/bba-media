@@ -1,0 +1,24 @@
+.bullets {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bullets__item {
+  position: relative;
+  padding: 0.75rem 0 0.75rem 1.5rem;
+  border-top: 1px solid var(--vt-rule);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.bullets__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.15rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--vt-teal);
+}

@@ -3,11 +3,12 @@ import DOMPurify from "dompurify";
 // Style
 import "./ArticlePage.css";
 // Hooks
-import { useArticle, useCorrections, useSiteContent } from "@/hooks";
+import { useArticle, useCorrections, useLocale, useSiteContent } from "@/hooks";
 // Components
-import { SEO, Section, SmartLink } from "@/components";
+import { Band, SEO, SmartLink } from "@/components";
 import NotFoundPage from "@/pages/404/NotFoundPage";
 // Utils
+import { formatDate } from "@/domain/format";
 import { articlePageSchema } from "@/domain/schema";
 
 const correctionLabel = {
@@ -19,10 +20,17 @@ const correctionLabel = {
 export default function ArticlePage() {
   const { slug } = useParams();
   const { site, seoBase } = useSiteContent();
+  const { locale } = useLocale();
   const { data: article, isLoading } = useArticle(slug);
   const { data: corrections } = useCorrections(article?.id);
 
-  if (isLoading) return <Section>Memuat…</Section>;
+  if (isLoading) {
+    return (
+      <Band>
+        <p className="vt-note">Memuat…</p>
+      </Band>
+    );
+  }
   if (!article) return <NotFoundPage />;
 
   const path = `/insight/${article.slug}`;
@@ -43,46 +51,48 @@ export default function ArticlePage() {
         ])}
       />
 
-      <Section>
-        <article className="article">
-          <header>
-            {article.kind === "partnership" && (
-              <p className="badge">
-                Konten Kemitraan
-                {article.sponsor_name ? ` · ${article.sponsor_name}` : ""}
-              </p>
-            )}
-            {article.category_name && (
-              <SmartLink href={`/insight?kategori=${article.category_slug}`}>
-                {article.category_name}
-              </SmartLink>
-            )}
-            <h1>{article.title}</h1>
-            <p className="meta">
-              {article.author_name} ·{" "}
+      <article className="article">
+        <header className="article__head vt-tone vt-tone--tint">
+          <div className="vt-wrap article__head-inner">
+            <p className="article__kicker">
+              {article.category_name && (
+                <SmartLink href={`/insight?kategori=${article.category_slug}`}>
+                  {article.category_name}
+                </SmartLink>
+              )}
+              {article.kind === "partnership" && (
+                <span className="article__badge">
+                  Konten Kemitraan
+                  {article.sponsor_name ? ` · ${article.sponsor_name}` : ""}
+                </span>
+              )}
+            </p>
+            <h1 className="article__title">{article.title}</h1>
+            <p className="article__meta">
+              {article.author_name} /{" "}
               <time dateTime={article.published_at}>
-                {new Date(article.published_at).toLocaleDateString("id-ID", {
-                  dateStyle: "long",
-                })}
+                {formatDate(article.published_at, locale)}
               </time>
             </p>
-            {article.cover_url && (
-              <figure>
-                <img src={article.cover_url} alt={article.cover_alt ?? ""} />
-                {article.cover_credit && (
-                  <figcaption>{article.cover_credit}</figcaption>
-                )}
-              </figure>
-            )}
-          </header>
+          </div>
+        </header>
+
+        <div className="vt-wrap article__main">
+          {article.cover_url && (
+            <figure className="article__cover">
+              <img src={article.cover_url} alt={article.cover_alt ?? ""} />
+              {article.cover_credit && (
+                <figcaption>{article.cover_credit}</figcaption>
+              )}
+            </figure>
+          )}
 
           {corrections && corrections.length > 0 && (
-            <aside className="corrections" aria-label="Koreksi">
-              {corrections.map((c) => (
-                <p key={c.id}>
-                  <strong>{correctionLabel[c.kind]}</strong> (
-                  {new Date(c.created_at).toLocaleDateString("id-ID")}):{" "}
-                  {c.note}
+            <aside className="article__corrections" aria-label="Koreksi">
+              {corrections.map((item) => (
+                <p key={item.id}>
+                  <strong>{correctionLabel[item.kind]}</strong> (
+                  {formatDate(item.created_at, locale)}): {item.note}
                 </p>
               ))}
             </aside>
@@ -95,13 +105,13 @@ export default function ArticlePage() {
             }}
           />
 
-          <footer>
+          <footer className="article__foot">
             <SmartLink href="/redaksi">
               Kebijakan editorial dan hak jawab
             </SmartLink>
           </footer>
-        </article>
-      </Section>
+        </div>
+      </article>
     </>
   );
 }

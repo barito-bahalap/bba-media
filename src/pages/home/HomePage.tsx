@@ -1,22 +1,13 @@
+// Style
+import "./HomePage.css";
 // Hooks
-import {
-  useArticles,
-  useHomeContent,
-  useLocale,
-  useSelectedIndex,
-  useSiteContent,
-} from "@/hooks";
+import { useSelectedIndex, useSiteContent, useWordmark } from "@/hooks";
+import { useArticles, useHomeContent, useLocale } from "@/hooks";
 // Components
 import { ClosingBand, SEO } from "@/components";
-import {
-  BannerSection,
-  CapabilitiesSection,
-  IntroSection,
-  JournalSection,
-  MastheadSection,
-  MethodSection,
-  StatementSection,
-} from "./_components";
+import { BannerSection, CapabilitiesSection } from "./_components";
+import { MethodSection, StatementSection } from "./_components";
+import { IntroSection, JournalSection, MastheadSection } from "./_components";
 // Data
 import { homeImages } from "@/data/media";
 import { HOME_LABELS } from "@/data/labels";
@@ -29,6 +20,7 @@ export default function HomePage() {
   const { locale } = useLocale();
   const home = useHomeContent();
   const { data: articles } = useArticles();
+  const { boxRef: mastRef, lines: mastLines } = useWordmark(site.name, 17);
   const { index: capabilityIndex, select: selectCapability } =
     useSelectedIndex();
   const { hero, positioning, capabilities, method, standards, closing } = home;
@@ -54,8 +46,9 @@ export default function HomePage() {
       />
 
       <MastheadSection
-        wordmark={site.name}
-        meta={[site.name, site.location, site.holdingName]}
+        boxRef={mastRef}
+        lines={mastLines}
+        meta={[site.location, site.holdingName, site.email]}
       />
 
       <IntroSection
@@ -67,7 +60,7 @@ export default function HomePage() {
         image={homeImages.hero}
         cardLabel={labels.capabilities}
         cardRows={capabilities.items.slice(0, 3).map((item) => ({
-          label: item.number,
+          label: String(item.number),
           value: item.title,
         }))}
       />

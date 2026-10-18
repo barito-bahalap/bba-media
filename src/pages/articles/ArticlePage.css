@@ -1,0 +1,129 @@
+.article__head {
+  padding-block: 2rem 2.5rem;
+}
+
+.article__head-inner {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.article__kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin: 0;
+  font-family: var(--vt-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.article__kicker a {
+  color: var(--vt-teal);
+}
+
+.article__badge {
+  padding: 0.2rem 0.5rem;
+  background-color: var(--vt-yellow);
+}
+
+.article__title {
+  max-width: 20ch;
+  margin: 0;
+  font-size: clamp(2rem, 8vw, 4.75rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.96;
+}
+
+.article__meta {
+  margin: 0;
+  color: var(--vt-muted);
+  font-family: var(--vt-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.article__main {
+  display: grid;
+  gap: 2rem;
+  padding-block: 2rem var(--vt-block);
+}
+
+.article__cover {
+  margin: 0;
+}
+
+.article__cover img {
+  display: block;
+  width: 100%;
+  max-height: 34rem;
+  object-fit: cover;
+}
+
+.article__cover figcaption {
+  margin-top: 0.5rem;
+  color: var(--vt-ink-muted);
+  font-size: 0.75rem;
+}
+
+.article__corrections {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 44rem;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--vt-navy);
+  background-color: var(--vt-yellow);
+  font-size: 0.875rem;
+}
+
+.article__corrections p {
+  margin: 0;
+}
+
+.article__body {
+  max-width: 44rem;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.article__body :is(h2, h3) {
+  margin: 2.25rem 0 0.75rem;
+  text-transform: none;
+  line-height: 1.1;
+}
+
+.article__body p,
+.article__body ul,
+.article__body ol {
+  margin: 0 0 1.25rem;
+}
+
+.article__body a {
+  color: var(--vt-teal);
+}
+
+.article__body img {
+  max-width: 100%;
+  height: auto;
+}
+
+.article__body blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1.25rem;
+  border-left: 4px solid var(--vt-teal);
+  font-size: 1.1875rem;
+  font-weight: 500;
+}
+
+.article__foot {
+  max-width: 44rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--vt-line);
+  font-family: var(--vt-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}

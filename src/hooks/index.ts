@@ -5,3 +5,5 @@ export * from "./useArticles";
 export * from "./useLanguageSwitch";
 export * from "./useHeaderDrawer";
 export * from "./useSelectedIndex";
+export * from "./useWordmark";
+export * from "./useArticlesIndex";

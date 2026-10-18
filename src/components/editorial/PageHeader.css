@@ -1,0 +1,50 @@
+.page-header {
+  padding-block: 2rem 3rem;
+}
+
+.page-header__inner {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.page-header__title {
+  margin: 0;
+  font-size: clamp(2.25rem, 10vw, 6.5rem);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
+  overflow-wrap: anywhere;
+}
+
+.page-header__side {
+  display: grid;
+  gap: 1.25rem;
+  justify-items: start;
+  max-width: 34rem;
+}
+
+.page-header__body {
+  margin: 0;
+  color: var(--vt-soft);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 1024px) {
+  .page-header {
+    padding-block: 3rem 4rem;
+  }
+
+  .page-header__inner {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    column-gap: 4rem;
+  }
+
+  .page-header__inner > .vt-index {
+    grid-column: 1 / -1;
+  }
+
+  .page-header__side {
+    align-self: end;
+  }
+}

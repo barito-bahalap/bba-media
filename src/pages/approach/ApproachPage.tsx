@@ -3,10 +3,13 @@ import "./ApproachPage.css";
 // Hooks
 import { shortTitle, useApproachContent, useSiteContent } from "@/hooks";
 // Components
-import { ClosingBand, InfoCard, PageHero, SEO } from "@/components";
-import { Section, SectionHeader } from "@/components";
+import { Band, ClosingBand, PageHeader, SEO } from "@/components";
+import { Tile, TileGrid, type Tone } from "@/components";
 // Utils
+import { pickAt } from "@/domain/format";
 import { breadcrumbSchema } from "@/domain/schema";
+
+const TONES: Tone[] = ["paper", "teal", "yellow", "tint"];
 
 export default function ApproachPage() {
   const { site, seoBase, href } = useSiteContent();
@@ -26,24 +29,27 @@ export default function ApproachPage() {
         ])}
       />
 
-      <PageHero
+      <PageHeader
         eyebrow={hero.eyebrow}
         title={hero.heading.join(" ")}
-        description={hero.body}
+        body={hero.body}
+        tone="yellow"
       />
 
-      <Section>
-        <SectionHeader title={principles.heading} />
-        <div className="grid-cards">
-          {principles.items.map((item) => (
-            <InfoCard
+      <Band tone="paper">
+        <h2 className="vt-section-title">{principles.heading}</h2>
+        <TileGrid columns={3}>
+          {principles.items.map((item, index) => (
+            <Tile
               key={item.number}
-              title={`${item.number}. ${item.title}`}
-              description={item.body}
+              number={item.number}
+              title={item.title}
+              body={item.body}
+              tone={pickAt(TONES, index)}
             />
           ))}
-        </div>
-      </Section>
+        </TileGrid>
+      </Band>
 
       <ClosingBand
         heading={engagement.heading}

@@ -21,11 +21,11 @@ export function ClosingBand({
   contact,
 }: ClosingBandProps) {
   return (
-    <section className="closing">
+    <section className="closing vt-tone vt-tone--navy">
       <div className="vt-wrap closing__inner">
         <div className="closing__lead">
           {index !== undefined && label && (
-            <IndexLabel index={index} label={label} tone="dark" />
+            <IndexLabel index={index} label={label} />
           )}
           <h2 className="closing__title">{heading}</h2>
         </div>
