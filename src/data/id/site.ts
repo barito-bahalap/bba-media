@@ -16,7 +16,7 @@ export const site = {
     { label: "Pendekatan", href: "/approach" },
     { label: "Standar", href: "/standards" },
     { label: "Tentang", href: "/about" },
-    { label: "Wawasan", href: "/insight" },
+    { label: "Insight", href: "/insight" },
   ],
 
   cta: {

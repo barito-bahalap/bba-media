@@ -1,8 +1,8 @@
 export const layout = {
   skipLink: "Lewati ke konten utama",
   menu: {
-    open: "Buka navigasi",
-    close: "Tutup navigasi",
+    open: "Menu",
+    close: "Tutup menu",
     label: "Navigasi utama",
     primaryNav: "Navigasi utama",
     mobileNav: "Navigasi seluler",
@@ -39,9 +39,9 @@ export const layout = {
         ],
       },
       {
-        title: "Wawasan",
+        title: "Insight",
         links: [
-          { label: "Artikel & Wawasan", href: "/insight" },
+          { label: "Artikel & Insight", href: "/insight" },
           { label: "Redaksi", href: "/redaksi" },
           { label: "Semua Layanan", href: "/services" },
         ],

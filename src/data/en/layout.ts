@@ -1,8 +1,8 @@
 export const layout = {
   skipLink: "Skip to main content",
   menu: {
-    open: "Open navigation",
-    close: "Close navigation",
+    open: "Menu",
+    close: "Close menu",
     label: "Main navigation",
     primaryNav: "Main navigation",
     mobileNav: "Mobile navigation",

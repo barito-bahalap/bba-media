@@ -3,3 +3,5 @@ export * from "./useMediaContent";
 export * from "./useContactForm";
 export * from "./useArticles";
 export * from "./useLanguageSwitch";
+export * from "./useHeaderDrawer";
+export * from "./useSelectedIndex";
