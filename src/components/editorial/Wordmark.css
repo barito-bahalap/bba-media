@@ -1,0 +1,20 @@
+.vt-wordmark {
+  container-type: inline-size;
+  overflow: hidden;
+}
+
+.vt-wordmark__text {
+  display: block;
+  font-family: var(--vt-display);
+  font-size: calc(100cqi / (var(--vt-chars) * 0.67));
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 0.82;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--vt-navy);
+}
+
+.vt-wordmark--light .vt-wordmark__text {
+  color: #fff;
+}

@@ -2,11 +2,16 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--gw-ink);
+  color: var(--vt-navy);
   text-decoration: none;
 }
 
+.brand--on-dark {
+  color: #fff;
+}
+
 .brand__bba-logo {
+  display: block;
   height: 18px;
 }
 
@@ -14,20 +19,34 @@
   height: 48px;
 }
 
-.brand--on-dark {
-  color: var(--gw-cream);
+.brand__mark {
+  display: inline-flex;
+  gap: 0.25rem;
 }
 
 .brand__dot {
   width: 0.625rem;
   height: 0.625rem;
   border-radius: 50%;
-  background-color: var(--gw-cyan);
+  background-color: var(--vt-navy);
+}
+
+.brand__dot[data-brand="media"] {
+  background-color: var(--vt-teal);
+}
+
+.brand__text {
+  display: grid;
+  line-height: 1.1;
+}
+
+.brand__short {
+  font-family: var(--vt-display);
+  font-size: 1rem;
+  font-weight: 800;
 }
 
 .brand__name {
-  font-family: var(--gw-sans);
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-size: 0.6875rem;
+  opacity: 0.7;
 }

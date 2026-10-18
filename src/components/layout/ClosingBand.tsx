@@ -1,27 +1,50 @@
 // Style
 import "./ClosingBand.css";
 // Components
-import { Button, Section, SectionHeader } from "@/components";
-// Data
-import { SECTION_ALT_TONE } from "@/data/layout";
+import { Button, IndexLabel } from "@/components";
 
 interface ClosingBandProps {
   heading: string;
   body: string;
   cta: { label: string; href: string };
+  index?: number;
+  label?: string;
+  contact?: { label: string; value: string };
 }
 
-export function ClosingBand({ heading, body, cta }: ClosingBandProps) {
+export function ClosingBand({
+  heading,
+  body,
+  cta,
+  index,
+  label,
+  contact,
+}: ClosingBandProps) {
   return (
-    <Section tone={SECTION_ALT_TONE}>
-      <div className="grid-split">
-        <SectionHeader title={heading} intro={body} />
-        <p>
-          <Button href={cta.href} variant="primary" brand="media">
-            {cta.label}
-          </Button>
-        </p>
+    <section className="closing">
+      <div className="vt-wrap closing__inner">
+        <div className="closing__lead">
+          {index !== undefined && label && (
+            <IndexLabel index={index} label={label} tone="dark" />
+          )}
+          <h2 className="closing__title">{heading}</h2>
+        </div>
+
+        <div className="closing__side">
+          <p className="closing__body">{body}</p>
+          <div className="closing__actions">
+            <Button href={cta.href} variant="accent" brand="media">
+              {cta.label}
+            </Button>
+          </div>
+          {contact && (
+            <p className="closing__contact">
+              <span>{contact.label}</span>
+              <a href={`mailto:${contact.value}`}>{contact.value}</a>
+            </p>
+          )}
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }

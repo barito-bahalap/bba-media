@@ -3,7 +3,8 @@ import { Outlet } from "react-router-dom";
 import "./RootLayout.css";
 // Components
 import { ScrollToTop } from "@/components";
-import { Footer, Header } from ".";
+import { Footer } from "./Footer";
+import { Header } from "./Header";
 
 export function RootLayout() {
   return (

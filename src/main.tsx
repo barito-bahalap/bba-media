@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 // Style
 import "@barito-bahalap/styles";
 import "./styles/app.css";
+import "./styles/theme.css";
 // App
 import { App } from "./app/App";
 

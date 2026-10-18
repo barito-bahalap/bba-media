@@ -1,0 +1,12 @@
+.vt-index {
+  margin: 0;
+  font-family: var(--vt-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--vt-ink-muted);
+}
+
+.vt-index--dark {
+  color: rgba(255, 255, 255, 0.7);
+}

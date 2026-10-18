@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { createPortal } from "react-dom";
 import { useLocation } from "react-router-dom";
 // Style
 import "./Header.css";
 // Hooks
-import { useLanguageSwitch, useSiteContent } from "@/hooks";
+import { useHeaderDrawer, useLanguageSwitch, useSiteContent } from "@/hooks";
 // Components
-import { Button, SmartLink, LanguageSwitcher } from "@/components";
+import { Button, LanguageSwitcher, SmartLink } from "@/components";
 import { Brand } from "./Brand";
 
 const normalize = (path: string) => path.replace(/\/+$/, "") || "/";
@@ -13,9 +13,9 @@ const normalize = (path: string) => path.replace(/\/+$/, "") || "/";
 export function Header() {
   const { mainNav, headerCta, footerGroups, layout } = useSiteContent();
   const languageItems = useLanguageSwitch();
-
   const { pathname } = useLocation();
-  const [open, setOpen] = useState(false);
+  const { open, triggerRef, closeRef, openDrawer, closeDrawer, dismissDrawer } =
+    useHeaderDrawer();
 
   const isActive = (target: string) => {
     const current = normalize(pathname);
@@ -28,35 +28,31 @@ export function Header() {
   };
 
   return (
-    <header className="site-header">
-      <div className="site-header__inner container">
+    <header className="header">
+      <div className="header__inner">
         <Brand logo />
 
-        <nav className="site-header__nav" aria-label={layout.menu.primaryNav}>
-          {mainNav.map((item) => {
-            const active = isActive(item.href);
-
-            return (
-              <SmartLink
-                key={item.href}
-                href={item.href}
-                className={
-                  active ? "site-header__link is-active" : "site-header__link"
-                }
-                aria-current={active ? "page" : undefined}
-              >
-                {item.label}
-              </SmartLink>
-            );
-          })}
+        <nav className="header__nav" aria-label={layout.menu.primaryNav}>
+          {mainNav.map((item) => (
+            <SmartLink
+              key={item.href}
+              href={item.href}
+              className="header__link"
+              aria-current={isActive(item.href) ? "page" : undefined}
+            >
+              {item.label}
+            </SmartLink>
+          ))}
         </nav>
 
-        <div className="site-header__end">
-          <LanguageSwitcher
-            items={languageItems}
-            label={layout.language.label}
-          />
-          <div className="site-header__cta">
+        <div className="header__end">
+          <div className="header__lang">
+            <LanguageSwitcher
+              items={languageItems}
+              label={layout.language.label}
+            />
+          </div>
+          <div className="header__cta">
             <Button
               label={headerCta.label}
               href={headerCta.href}
@@ -66,72 +62,80 @@ export function Header() {
             />
           </div>
           <button
+            ref={triggerRef}
             type="button"
-            className="site-header__toggle"
+            className="header__trigger"
             aria-expanded={open}
             aria-controls="mobile-drawer"
-            aria-label={open ? layout.menu.close : layout.menu.open}
-            onClick={() => setOpen((value) => !value)}
+            onClick={openDrawer}
           >
-            <span className="site-header__toggle-label">
-              {open ? layout.menu.close : layout.menu.open}
-            </span>
+            {layout.menu.open}
           </button>
         </div>
       </div>
 
-      <div id="mobile-drawer" className="site-header__drawer" hidden={!open}>
-        <div className="container site-header__drawer-inner">
-          <nav
-            className="site-header__drawer-nav"
+      {open &&
+        createPortal(
+          <div
+            id="mobile-drawer"
+            className="drawer"
+            role="dialog"
+            aria-modal="true"
             aria-label={layout.menu.mobileNav}
           >
-            {footerGroups.map((group) => (
-              <section key={group.title} className="site-header__drawer-group">
-                <h2 className="site-header__drawer-heading">{group.title}</h2>
+            <div className="drawer__bar">
+              <Brand logo />
+              <button
+                ref={closeRef}
+                type="button"
+                className="header__trigger"
+                onClick={dismissDrawer}
+              >
+                {layout.menu.close}
+              </button>
+            </div>
 
-                <ul className="site-header__drawer-list">
-                  {group.links.map((item) => {
-                    const active = isActive(item.href);
-
-                    return (
+            <nav className="drawer__nav" aria-label={layout.menu.mobileNav}>
+              {footerGroups.map((group) => (
+                <section key={group.title} className="drawer__group">
+                  <h2 className="drawer__heading">{group.title}</h2>
+                  <ul className="drawer__list">
+                    {group.links.map((item) => (
                       <li key={item.href}>
                         <SmartLink
                           href={item.href}
-                          className={
-                            active
-                              ? "site-header__drawer-link is-active"
-                              : "site-header__drawer-link"
+                          className="drawer__link"
+                          aria-current={
+                            isActive(item.href) ? "page" : undefined
                           }
-                          aria-current={active ? "page" : undefined}
-                          onClick={() => setOpen(false)}
+                          onClick={closeDrawer}
                         >
                           {item.label}
                         </SmartLink>
                       </li>
-                    );
-                  })}
-                </ul>
-              </section>
-            ))}
+                    ))}
+                  </ul>
+                </section>
+              ))}
+            </nav>
 
-            <Button
-              label={headerCta.label}
-              href={headerCta.href}
-              variant="primary"
-              brand="media"
-              onClick={() => setOpen(false)}
-              fullWidth
-            />
-
-            <LanguageSwitcher
-              items={languageItems}
-              label={layout.language.label}
-              className="site-header__drawer-language"
-            />
-          </nav>
-        </div>
-      </div>
+            <div className="drawer__foot">
+              <LanguageSwitcher
+                items={languageItems}
+                label={layout.language.label}
+              />
+              <Button
+                label={headerCta.label}
+                href={headerCta.href}
+                variant="primary"
+                brand="media"
+                fullWidth
+                onClick={closeDrawer}
+              />
+            </div>
+          </div>,
+          document.body,
+        )}
     </header>
   );
 }
