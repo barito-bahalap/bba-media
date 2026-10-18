@@ -1,27 +1,38 @@
+import "./Footer.css";
 // Hooks
-import { useSiteContent } from "@/hooks";
+import { useLanguageSwitch, useSiteContent } from "@/hooks";
 // Components
-import { SmartLink } from "@/components";
+import { SmartLink, LanguageSwitcher } from "@/components";
 import { Brand } from "./Brand";
 
 export function Footer() {
-  const { site, footerGroups } = useSiteContent();
+  const { site, footerGroups, layout } = useSiteContent();
+  const languageItems = useLanguageSwitch();
 
   return (
     <footer className="site-footer">
       <div className="container site-footer__inner">
         <div className="site-footer__about">
-          <Brand name={site.name} shortName={site.shortName} />
+          <Brand logo logoFull />
+
           <p className="site-footer__text">
             {site.tagline}. {site.location}.
           </p>
+
           <p className="site-footer__text">
-            {site.name} is an operating brand of{" "}
-            <a href={site.holdingUrl} rel="noopener">
-              {site.holdingName}
+            {site.name} |{" "}
+            <a href={site.holdingUrl} rel="noopener noreferrer">
+              {layout.footer.parentLabel}
             </a>
             .
           </p>
+
+          <nav
+            className="site-footer__contact"
+            aria-label={layout.footer.contactLabel}
+          >
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </nav>
         </div>
 
         {footerGroups.map((group) => (
@@ -31,6 +42,7 @@ export function Footer() {
             aria-label={group.title}
           >
             <h2 className="site-footer__heading">{group.title}</h2>
+
             <ul className="site-footer__list">
               {group.links.map((link) => (
                 <li key={link.href}>
@@ -43,9 +55,11 @@ export function Footer() {
       </div>
 
       <div className="container site-footer__legal">
+        <LanguageSwitcher items={languageItems} label={layout.language.label} />
+
         <p>
-          &copy; {new Date().getFullYear()} {site.holdingName}. All rights
-          reserved.
+          &copy; {new Date().getFullYear()} {site.holdingName}.{" "}
+          {layout.footer.rights}
         </p>
       </div>
     </footer>

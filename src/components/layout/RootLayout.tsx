@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 // Style
-import "./layout.css";
+import "./RootLayout.css";
 // Components
 import { ScrollToTop } from "@/components";
 import { Footer, Header } from ".";

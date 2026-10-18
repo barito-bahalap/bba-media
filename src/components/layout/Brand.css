@@ -1,0 +1,33 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gw-ink);
+  text-decoration: none;
+}
+
+.brand__bba-logo {
+  height: 18px;
+}
+
+.brand__bba-logo--full {
+  height: 48px;
+}
+
+.brand--on-dark {
+  color: var(--gw-cream);
+}
+
+.brand__dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background-color: var(--gw-cyan);
+}
+
+.brand__name {
+  font-family: var(--gw-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
