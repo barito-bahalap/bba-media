@@ -9,4 +9,9 @@ export default defineConfig({
       "@": path.resolve(import.meta.dirname, "./src"),
     },
   },
+  // The kit reads import.meta.env at import time, so it must be served as source,
+  // not pre-bundled, or the env values are undefined.
+  optimizeDeps: {
+    exclude: ["@barito-bahalap/supabase"],
+  },
 });
