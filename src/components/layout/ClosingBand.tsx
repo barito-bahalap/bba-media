@@ -1,4 +1,8 @@
+// Style
+import "./ClosingBand.css";
+// Components
 import { Button, Section, SectionHeader } from "@/components";
+// Data
 import { SECTION_ALT_TONE } from "@/data/layout";
 
 interface ClosingBandProps {
