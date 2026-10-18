@@ -6,7 +6,7 @@ import { useLegalContent, useSiteContent } from "@/hooks";
 import { LegalDocument, SEO } from "@/components";
 
 export default function TermsPage() {
-  const { seoBase } = useSiteContent();
+  const { seoBase, href } = useSiteContent();
   const { terms } = useLegalContent();
 
   return (
@@ -15,7 +15,7 @@ export default function TermsPage() {
         {...seoBase}
         title={terms.title}
         description={terms.description}
-        path="/terms"
+        path={href("/terms")}
       />
       <LegalDocument
         title={terms.title}

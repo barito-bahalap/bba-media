@@ -1,61 +1,66 @@
 // Style
 import "./CareersPage.css";
 // Hooks
-import { useCareersContent, useSiteContent } from "@/hooks";
+import { shortTitle, useCareersContent, useSiteContent } from "@/hooks";
 // Components
-import { Button, Checklist, PageHero } from "@/components";
-import { SEO, Section, SectionHeader } from "@/components";
-// Data
-import { SECTION_ALT_TONE } from "@/data/layout";
+import { Button, InfoCard, PageHero, SEO } from "@/components";
+import { Section, SectionHeader } from "@/components";
 // Utils
 import { breadcrumbSchema } from "@/domain/schema";
+// Data
+import { SECTION_ALT_TONE } from "@/data/layout";
 
 export default function CareersPage() {
-  const { site, seoBase } = useSiteContent();
-  const { careersIntro, workingModel, roleAreas, interestNote } =
-    useCareersContent();
+  const { site, seoBase, href } = useSiteContent();
+  const { seo, hero, intro, profiles, application } = useCareersContent();
+  const title = shortTitle(seo.title);
 
   return (
     <>
       <SEO
         {...seoBase}
-        title="Careers"
-        description="Working at Barito Bahalap Media: how the team works and the areas in which it grows."
-        path="/careers"
+        title={title}
+        description={seo.description}
+        path={href("/careers")}
         structuredData={breadcrumbSchema(site, [
-          { name: "Home", path: "/" },
-          { name: "Careers", path: "/careers" },
+          { name: site.shortName, path: href("/") },
+          { name: title, path: href("/careers") },
         ])}
       />
 
       <PageHero
-        eyebrow={careersIntro.eyebrow}
-        title={careersIntro.title}
-        description={careersIntro.description}
+        eyebrow={hero.eyebrow}
+        title={hero.heading.join(" ")}
+        description={hero.body}
       />
 
       <Section>
-        <div className="grid-split">
-          <SectionHeader eyebrow="Working model" title="How the team works." />
-          <Checklist items={workingModel} />
+        <SectionHeader title={intro.heading} intro={intro.body} />
+        <div className="grid-cards">
+          {profiles.map((profile) => (
+            <InfoCard
+              key={profile.title}
+              title={profile.title}
+              description={profile.description}
+            />
+          ))}
         </div>
       </Section>
 
       <Section tone={SECTION_ALT_TONE}>
         <div className="grid-split">
-          <SectionHeader eyebrow="Areas" title="Where the team grows." />
+          <SectionHeader title={application.heading} intro={application.body} />
           <div className="stack">
-            <Checklist items={roleAreas} />
-            <p className="prose-block">{interestNote}</p>
             <p>
               <Button
-                href={`mailto:${site.email}?subject=${encodeURIComponent("BBM careers: expression of interest")}`}
+                href={`mailto:${application.email}?subject=${encodeURIComponent("BBM careers: introduction")}`}
                 variant="outline"
                 brand="media"
               >
-                Introduce yourself
+                {application.emailLabel}
               </Button>
             </p>
+            <p className="prose-block">{application.note}</p>
           </div>
         </div>
       </Section>

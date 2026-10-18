@@ -1,22 +1,34 @@
+import { useMemo } from "react";
 // Style
 import "./ContactPage.css";
 // Hooks
-import { useContactContent, useContactForm, useSiteContent } from "@/hooks";
+import { shortTitle, useContactContent, useSiteContent } from "@/hooks";
+import { useContactForm } from "@/hooks";
 // Components
-import { Checkbox, Checklist, Input, Select, Textarea } from "@/components";
-import { Button, SEO, Section, SmartLink, PageHero } from "@/components";
+import { Checkbox, Input, Select, Textarea } from "@/components";
+import { Button, PageHero, SEO, Section, SectionHeader } from "@/components";
 // Utils
 import { breadcrumbSchema } from "@/domain/schema";
 
 export default function ContactPage() {
-  const { site, seoBase } = useSiteContent();
-  const {
-    contactIntro,
-    inquiryTypes,
-    includeList,
-    consentText,
-    correctionNote,
-  } = useContactContent();
+  const { site, seoBase, href } = useSiteContent();
+  const { seo, hero, details, form } = useContactContent();
+  const { fields } = form;
+  const title = shortTitle(seo.title);
+
+  const inquiryTypes = useMemo(
+    () =>
+      fields.service.options.map((option) => ({
+        value: option,
+        label: option,
+      })),
+    [fields.service.options],
+  );
+  const inquiryOptions = [
+    { value: "", label: fields.service.placeholder },
+    ...inquiryTypes,
+  ];
+
   const {
     values,
     errors,
@@ -24,50 +36,52 @@ export default function ContactPage() {
     handleChange,
     handleConsent,
     handleSubmit,
-  } = useContactForm(site.email, inquiryTypes);
-
-  const inquiryOptions = [{ value: "", label: "Select" }, ...inquiryTypes];
+  } = useContactForm(details.email, inquiryTypes, {
+    name: fields.name.required,
+    email: fields.email.required,
+    message: fields.message.required,
+    consent: form.consentRequired,
+  });
 
   return (
     <>
       <SEO
         {...seoBase}
-        title="Contact"
-        description="Start a conversation with Barito Bahalap Media about a communications, media relations or content requirement."
-        path="/contact"
+        title={title}
+        description={seo.description}
+        path={href("/contact")}
         structuredData={breadcrumbSchema(site, [
-          { name: "Home", path: "/" },
-          { name: "Contact", path: "/contact" },
+          { name: site.shortName, path: href("/") },
+          { name: title, path: href("/contact") },
         ])}
       />
 
       <PageHero
-        eyebrow={contactIntro.eyebrow}
-        title={contactIntro.title}
-        description={contactIntro.description}
+        eyebrow={hero.eyebrow}
+        title={hero.heading.join(" ")}
+        description={hero.body}
       />
 
       <Section>
         <div className="grid-split">
           <div className="stack">
-            <h2>What to include</h2>
-            <Checklist items={includeList} />
+            <SectionHeader title={details.heading} intro={details.body} />
             <p className="form-note">
-              Email: <a href={`mailto:${site.email}`}>{site.email}</a>
+              {details.emailLabel}:{" "}
+              <a href={`mailto:${details.email}`}>{details.email}</a>
             </p>
-            <p className="form-note">{site.location}</p>
             <p className="form-note">
-              {correctionNote}{" "}
-              <SmartLink href="/standards">Editorial standards</SmartLink>
+              {details.parentLabel}: {details.parentName}
             </p>
           </div>
 
           <form className="form-grid" onSubmit={handleSubmit} noValidate>
+            <h2>{form.heading}</h2>
             <div className="form-grid__row">
               <Input
                 id="name"
                 name="name"
-                label="Name"
+                label={fields.name.label}
                 autoComplete="name"
                 required
                 value={values.name}
@@ -77,41 +91,28 @@ export default function ContactPage() {
               <Input
                 id="organization"
                 name="organization"
-                label="Organization"
+                label={fields.organization.label}
                 autoComplete="organization"
-                required
                 value={values.organization}
                 error={errors.organization}
                 onChange={handleChange}
               />
             </div>
-            <div className="form-grid__row">
-              <Input
-                id="role"
-                name="role"
-                label="Role"
-                autoComplete="organization-title"
-                value={values.role}
-                error={errors.role}
-                onChange={handleChange}
-              />
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                label="Email"
-                autoComplete="email"
-                required
-                value={values.email}
-                error={errors.email}
-                onChange={handleChange}
-              />
-            </div>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              label={fields.email.label}
+              autoComplete="email"
+              required
+              value={values.email}
+              error={errors.email}
+              onChange={handleChange}
+            />
             <Select
               id="inquiryType"
               name="inquiryType"
-              label="Inquiry type"
-              required
+              label={fields.service.label}
               options={inquiryOptions}
               value={values.inquiryType}
               error={errors.inquiryType}
@@ -120,7 +121,7 @@ export default function ContactPage() {
             <Textarea
               id="message"
               name="message"
-              label="Requirement"
+              label={fields.message.label}
               rows={6}
               required
               value={values.message}
@@ -129,20 +130,19 @@ export default function ContactPage() {
             />
             <Checkbox
               id="consent"
-              label={consentText}
+              label={form.consent}
               checked={values.consent}
               error={errors.consent}
               onChange={handleConsent}
             />
             <div>
               <Button type="submit" variant="primary" brand="media">
-                Prepare email
+                {form.submit}
               </Button>
             </div>
+            {/* Opens the visitor's mail app. form.success/error need a real backend submit. */}
             <p className="form-note" aria-live="polite">
-              {prepared
-                ? "Your email application should now open with the inquiry. Send the email to complete the request."
-                : "This form prepares an email in your own mail application. Nothing is sent until you send it."}
+              {prepared ? details.email : form.privacyNote}
             </p>
           </form>
         </div>

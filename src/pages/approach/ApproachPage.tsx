@@ -1,84 +1,55 @@
 // Style
 import "./ApproachPage.css";
 // Hooks
-import { useApproachContent, useSiteContent } from "@/hooks";
+import { shortTitle, useApproachContent, useSiteContent } from "@/hooks";
 // Components
-import { Checklist, CtaBand, DataTableVariant, PageHero } from "@/components";
-import { SEO, Section, SectionHeader, ProcessSteps } from "@/components";
+import { ClosingBand, InfoCard, PageHero, SEO } from "@/components";
+import { Section, SectionHeader } from "@/components";
 // Utils
 import { breadcrumbSchema } from "@/domain/schema";
-// Data
-import { SECTION_ALT_TONE } from "@/data/layout";
 
 export default function ApproachPage() {
-  const { site, seoBase } = useSiteContent();
-  const { stages, decisionTable, engagementTable, contracting, ctaBand } =
-    useApproachContent();
+  const { site, seoBase, href } = useSiteContent();
+  const { seo, hero, principles, engagement, cta } = useApproachContent();
+  const title = shortTitle(seo.title);
 
   return (
     <>
       <SEO
         {...seoBase}
-        title="Approach and engagement model"
-        description="How Barito Bahalap Media delivers communications work: six defined stages, clear approval responsibilities and project or retainer engagement."
-        path="/approach"
+        title={title}
+        description={seo.description}
+        path={href("/approach")}
         structuredData={breadcrumbSchema(site, [
-          { name: "Home", path: "/" },
-          { name: "Approach", path: "/approach" },
+          { name: site.shortName, path: href("/") },
+          { name: title, path: href("/approach") },
         ])}
       />
 
       <PageHero
-        eyebrow="Approach"
-        title="A defined process with clear approval responsibilities."
-        description="Each engagement follows the same stages, so the client knows what will be produced, who approves what and how the work is reported."
+        eyebrow={hero.eyebrow}
+        title={hero.heading.join(" ")}
+        description={hero.body}
       />
 
       <Section>
-        <SectionHeader
-          eyebrow="Delivery"
-          title="Six stages from brief to report."
-        />
-        <ProcessSteps steps={stages} />
-      </Section>
-
-      <Section tone={SECTION_ALT_TONE}>
-        <SectionHeader
-          eyebrow="Responsibilities"
-          title="Who decides what."
-          intro="Clients approve what concerns them: their facts, their brand and commissioned content before release. Editorial decisions are not subject to client approval."
-        />
-        <DataTableVariant
-          caption="Decision responsibilities"
-          columns={decisionTable.columns}
-          rows={decisionTable.rows}
-        />
-      </Section>
-
-      <Section>
-        <SectionHeader
-          eyebrow="Engagement models"
-          title="Projects, retainers and production-only work."
-        />
-        <DataTableVariant
-          caption="Engagement models"
-          columns={engagementTable.columns}
-          rows={engagementTable.rows}
-        />
-      </Section>
-
-      <Section tone={SECTION_ALT_TONE}>
-        <div className="grid-split">
-          <SectionHeader
-            eyebrow={contracting.eyebrow}
-            title={contracting.title}
-            intro={contracting.description}
-          />
-          <Checklist items={contracting.items} />
+        <SectionHeader title={principles.heading} />
+        <div className="grid-cards">
+          {principles.items.map((item) => (
+            <InfoCard
+              key={item.number}
+              title={`${item.number}. ${item.title}`}
+              description={item.body}
+            />
+          ))}
         </div>
       </Section>
 
-      <CtaBand {...ctaBand} brand="media" />
+      <ClosingBand
+        heading={engagement.heading}
+        body={engagement.body}
+        cta={cta}
+      />
     </>
   );
 }

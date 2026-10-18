@@ -1,105 +1,50 @@
 // Style
 import "./StandardsPage.css";
 // Hooks
-import { useSiteContent, useStandardsContent } from "@/hooks";
+import { shortTitle, useSiteContent, useStandardsContent } from "@/hooks";
 // Components
-import { Accordion, Button, Callout, CtaBand } from "@/components";
-import { DataTableVariant, InfoCard, PageHero } from "@/components";
-import { SEO, Section, SectionHeader } from "@/components";
+import { ClosingBand, InfoCard, PageHero, SEO } from "@/components";
+import { Section } from "@/components";
 // Utils
 import { breadcrumbSchema } from "@/domain/schema";
-// Data
-import { SECTION_ALT_TONE } from "@/data/layout";
 
 export default function StandardsPage() {
-  const { site, seoBase } = useSiteContent();
-  const {
-    standardsIntro,
-    principles,
-    status,
-    framework,
-    corrections,
-    faq,
-    ctaBand,
-  } = useStandardsContent();
+  const { site, seoBase, href } = useSiteContent();
+  const { seo, hero, items, closing } = useStandardsContent();
+  const title = shortTitle(seo.title);
 
   return (
     <>
       <SEO
         {...seoBase}
-        title="Editorial standards"
-        description="How Barito Bahalap Media separates commissioned communications from independent editorial decisions, and the legal and ethical standards it applies."
-        path="/standards"
+        title={title}
+        description={seo.description}
+        path={href("/standards")}
         structuredData={breadcrumbSchema(site, [
-          { name: "Home", path: "/" },
-          { name: "Editorial standards", path: "/standards" },
+          { name: site.shortName, path: href("/") },
+          { name: title, path: href("/standards") },
         ])}
       />
 
       <PageHero
-        eyebrow={standardsIntro.eyebrow}
-        title={standardsIntro.title}
-        description={standardsIntro.description}
+        eyebrow={hero.eyebrow}
+        title={hero.heading.join(" ")}
+        description={hero.body}
       />
 
       <Section>
         <div className="grid-cards">
-          {principles.map((item) => (
+          {items.map((item) => (
             <InfoCard
-              key={item.title}
-              title={item.title}
-              description={item.description}
+              key={item.number}
+              title={`${item.number}. ${item.title}`}
+              description={item.body}
             />
           ))}
         </div>
       </Section>
 
-      <Section tone={SECTION_ALT_TONE}>
-        <div className="stack">
-          <Callout title={status.title}>
-            <p>{status.text}</p>
-          </Callout>
-        </div>
-      </Section>
-
-      <Section>
-        <SectionHeader
-          eyebrow="Legal framework"
-          title="Standards and laws BBM works under."
-        />
-        <DataTableVariant
-          caption="Legal and ethical framework"
-          columns={framework.columns}
-          rows={framework.rows}
-        />
-      </Section>
-
-      <Section tone={SECTION_ALT_TONE}>
-        <Callout
-          title={corrections.title}
-          action={
-            <Button
-              href={`mailto:${site.correctionsEmail}?subject=${encodeURIComponent("BBM correction request")}`}
-              variant="outline"
-              brand="media"
-            >
-              {corrections.actionLabel}
-            </Button>
-          }
-        >
-          <p>{corrections.text}</p>
-        </Callout>
-      </Section>
-
-      <Section>
-        <SectionHeader
-          eyebrow="Questions"
-          title="Frequently asked questions."
-        />
-        <Accordion items={faq} />
-      </Section>
-
-      <CtaBand {...ctaBand} brand="media" />
+      <ClosingBand {...closing} />
     </>
   );
 }

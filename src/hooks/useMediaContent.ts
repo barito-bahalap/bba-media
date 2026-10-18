@@ -1,105 +1,102 @@
-import { aboutIntro, facts, roles, stage, structureIntro } from "@/data/about";
-import {
-  contracting,
-  decisionTable,
-  engagementTable,
-  stages,
-} from "@/data/approach";
-import {
-  careersIntro,
-  interestNote,
-  roleAreas,
-  workingModel,
-} from "@/data/careers";
-import {
-  consentText,
-  contactIntro,
-  correctionNote,
-  includeList,
-  inquiryTypes,
-} from "@/data/contact";
-import {
-  ctaBand,
-  hero,
-  homeIntro,
-  homeServiceIds,
-  homeStage,
-  homeStandards,
-  homeWorkflow,
-} from "@/data/home";
-import { privacy, terms } from "@/data/legal";
-import { boundaries, services } from "@/data/services";
-import { footerGroups, headerCta, mainNav, site } from "@/data/site";
-import {
-  corrections,
-  faq,
-  framework,
-  principles,
-  standardsIntro,
-  status,
-} from "@/data/standards";
+import { useLocale } from "./useLocale";
+import { HOLDING_URL, LOCATION } from "@/data/constants";
+import type {
+  FooterGroup,
+  LegalPageContent,
+  NavLink,
+  SiteIdentity,
+} from "@/domain/content";
+
+const navLinks = (items: readonly NavLink[]): NavLink[] =>
+  items.map((item) => ({ label: item.label, href: item.href }));
+
+interface LegalSource {
+  seo: { description: string };
+  title: string;
+  updated: string;
+  intro: string;
+  sections: readonly { heading: string; paragraphs: readonly string[] }[];
+}
+
+function toLegalPage(doc: LegalSource): LegalPageContent {
+  return {
+    title: doc.title,
+    description: doc.seo.description,
+    updated: doc.updated,
+    intro: doc.intro,
+    sections: doc.sections.map((section, index) => ({
+      id: `section-${index + 1}`,
+      heading: section.heading,
+      paragraphs: [...section.paragraphs],
+    })),
+  };
+}
 
 export function useSiteContent() {
+  const { content, href } = useLocale();
+  const { site: s, layout } = content;
+
+  const site: SiteIdentity = {
+    name: s.name,
+    shortName: s.shortName,
+    tagline: s.tagline,
+    description: s.description,
+    url: s.url,
+    holdingName: s.parentName,
+    holdingUrl: HOLDING_URL,
+    location: LOCATION,
+    email: s.email,
+    correctionsEmail: s.email,
+  };
+
+  const mainNav = navLinks(s.navigation);
+  const headerCta: NavLink = {
+    label: s.cta.label,
+    href: s.cta.href,
+  };
+
+  const footerGroups: FooterGroup[] = layout.footer.groups.map((group) => ({
+    title: group.title,
+    links: navLinks(group.links),
+  }));
+
   const seoBase = { siteName: site.name, siteUrl: site.url };
-  return { site, mainNav, headerCta, footerGroups, seoBase };
+
+  return { site, mainNav, headerCta, footerGroups, seoBase, href, layout };
 }
 
 export function useHomeContent() {
-  const featuredServices = homeServiceIds
-    .map((id) => services.find((service) => service.id === id))
-    .filter((service): service is NonNullable<typeof service> =>
-      Boolean(service),
-    );
-
-  return {
-    hero,
-    homeIntro,
-    featuredServices,
-    homeWorkflow,
-    homeStandards,
-    homeStage,
-    ctaBand,
-  };
+  return useLocale().content.home;
 }
 
 export function useServicesContent() {
-  return { services, boundaries, ctaBand };
+  return useLocale().content.services;
 }
 
 export function useApproachContent() {
-  return { stages, decisionTable, engagementTable, contracting, ctaBand };
+  return useLocale().content.approach;
 }
 
 export function useStandardsContent() {
-  return {
-    standardsIntro,
-    principles,
-    status,
-    framework,
-    corrections,
-    faq,
-    ctaBand,
-  };
+  return useLocale().content.standards;
 }
 
 export function useAboutContent() {
-  return { aboutIntro, facts, structureIntro, roles, stage, ctaBand };
+  return useLocale().content.about;
 }
 
 export function useContactContent() {
-  return {
-    contactIntro,
-    inquiryTypes,
-    includeList,
-    consentText,
-    correctionNote,
-  };
+  return useLocale().content.contact;
 }
 
 export function useCareersContent() {
-  return { careersIntro, workingModel, roleAreas, interestNote };
+  return useLocale().content.careers;
 }
 
 export function useLegalContent() {
-  return { privacy, terms };
+  const { privacy, terms } = useLocale().content.legal;
+  return { privacy: toLegalPage(privacy), terms: toLegalPage(terms) };
 }
+
+// Page titles in the data include the site name; the SEO component appends it itself.
+export const shortTitle = (title: string) => title.split(" | ")[0];

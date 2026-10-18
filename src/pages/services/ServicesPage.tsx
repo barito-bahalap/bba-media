@@ -1,67 +1,67 @@
 // Style
 import "./ServicesPage.css";
 // Hooks
-import { useServicesContent, useSiteContent } from "@/hooks";
+import { shortTitle, useServicesContent, useSiteContent } from "@/hooks";
 // Components
-import { Checklist, CtaBand, PageHero } from "@/components";
-import { SEO, Section, SectionHeader } from "@/components";
+import { Checklist, ClosingBand, PageHero, SEO } from "@/components";
+import { Section, SectionHeader } from "@/components";
 // Utils
 import { breadcrumbSchema } from "@/domain/schema";
 // Data
 import { SECTION_ALT_TONE } from "@/data/layout";
 
 export default function ServicesPage() {
-  const { site, seoBase } = useSiteContent();
-  const { services, boundaries, ctaBand } = useServicesContent();
+  const { site, seoBase, href } = useSiteContent();
+  const { seo, hero, intro, items, engagement } = useServicesContent();
+  const title = shortTitle(seo.title);
 
   return (
     <>
       <SEO
         {...seoBase}
-        title="Services"
-        description="Strategic communications, media relations, content operations, institutional communications, editorial services, multimedia production and social media strategy from Barito Bahalap Media."
-        path="/services"
+        title={title}
+        description={seo.description}
+        path={href("/services")}
         structuredData={breadcrumbSchema(site, [
-          { name: "Home", path: "/" },
-          { name: "Services", path: "/services" },
+          { name: site.shortName, path: href("/") },
+          { name: title, path: href("/services") },
         ])}
       />
 
       <PageHero
-        eyebrow="Services"
-        title="Communications services built around accountable process."
-        description="Each service is scoped in writing, produced under agreed approval steps and reported against agreed deliverables."
+        eyebrow={hero.eyebrow}
+        title={hero.heading.join(" ")}
+        description={hero.body}
       />
 
-      {services.map((service, index) => (
+      <Section>
+        <SectionHeader title={intro.heading} intro={intro.body} />
+      </Section>
+
+      {items.map((service, index) => (
         <Section
           key={service.id}
-          tone={index % 2 === 1 ? SECTION_ALT_TONE : undefined}
+          tone={index % 2 === 0 ? SECTION_ALT_TONE : undefined}
         >
-          <div className="grid-split">
-            <SectionHeader title={service.title} intro={service.summary} />
+          <div id={service.id} className="grid-split">
+            <SectionHeader
+              eyebrow={service.number}
+              title={service.title}
+              intro={service.summary}
+            />
             <div className="service-block">
-              <Checklist items={service.scope} />
-              {service.note && (
-                <p className="service-block__note">{service.note}</p>
-              )}
+              <Checklist items={[...service.deliverables]} />
+              <p className="service-block__note">{service.outcome}</p>
             </div>
           </div>
         </Section>
       ))}
 
-      <Section tone={SECTION_ALT_TONE}>
-        <div className="grid-split">
-          <SectionHeader
-            eyebrow={boundaries.eyebrow}
-            title={boundaries.title}
-            intro={boundaries.description}
-          />
-          <Checklist items={boundaries.items} />
-        </div>
-      </Section>
-
-      <CtaBand {...ctaBand} brand="media" />
+      <ClosingBand
+        heading={engagement.heading}
+        body={engagement.body}
+        cta={engagement.cta}
+      />
     </>
   );
 }
