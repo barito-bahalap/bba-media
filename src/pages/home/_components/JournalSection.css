@@ -1,0 +1,39 @@
+.journal {
+  padding-block: var(--vt-block);
+}
+
+.journal__inner {
+  display: grid;
+  gap: 2rem;
+}
+
+.journal__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.journal__lead {
+  display: grid;
+  gap: 1rem;
+}
+
+.journal__title {
+  margin: 0;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.journal__grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .journal__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

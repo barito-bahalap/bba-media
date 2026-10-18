@@ -1,19 +1,47 @@
-// Style
-import "./HomePage.css";
 // Hooks
-import { useHomeContent, useSiteContent } from "@/hooks";
+import {
+  useArticles,
+  useHomeContent,
+  useLocale,
+  useSelectedIndex,
+  useSiteContent,
+} from "@/hooks";
 // Components
-import { Button, InfoCard, PageHero, SEO } from "@/components";
-import { ClosingBand, Section, SectionHeader } from "@/components";
+import { ClosingBand, SEO } from "@/components";
+import {
+  BannerSection,
+  CapabilitiesSection,
+  IntroSection,
+  JournalSection,
+  MastheadSection,
+  MethodSection,
+  StatementSection,
+} from "./_components";
 // Data
-import { SECTION_ALT_TONE } from "@/data/layout";
+import { homeImages } from "@/data/media";
+import { HOME_LABELS } from "@/data/labels";
 // Utils
+import { formatDate } from "@/domain/format";
 import { homeSchema } from "@/domain/schema";
 
 export default function HomePage() {
-  const { site, seoBase, href } = useSiteContent();
+  const { site, seoBase, href, layout } = useSiteContent();
+  const { locale } = useLocale();
   const home = useHomeContent();
-  const { hero, positioning, capabilities, method, standards } = home;
+  const { data: articles } = useArticles();
+  const { index: capabilityIndex, select: selectCapability } =
+    useSelectedIndex();
+  const { hero, positioning, capabilities, method, standards, closing } = home;
+  const labels = HOME_LABELS[locale === "en" ? "en" : "id"];
+
+  const entries = (articles ?? []).slice(0, 3).map((article) => ({
+    id: article.id,
+    href: `/insight/${article.slug}`,
+    title: article.title,
+    category: article.category_name,
+    date: formatDate(article.published_at, locale),
+    cover: article.cover_url,
+  }));
 
   return (
     <>
@@ -25,81 +53,71 @@ export default function HomePage() {
         structuredData={homeSchema(site)}
       />
 
-      <PageHero
-        eyebrow={hero.eyebrow}
-        title={hero.heading.join(" ")}
-        description={hero.body}
-        actions={
-          <>
-            <Button href={hero.primaryCta.href} variant="primary" brand="media">
-              {hero.primaryCta.label}
-            </Button>
-            <Button
-              href={hero.secondaryCta.href}
-              variant="outline"
-              brand="media"
-            >
-              {hero.secondaryCta.label}
-            </Button>
-          </>
-        }
+      <MastheadSection
+        wordmark={site.name}
+        meta={[site.name, site.location, site.holdingName]}
       />
 
-      <Section>
-        <SectionHeader
-          eyebrow={positioning.eyebrow}
-          title={positioning.heading}
-          intro={positioning.body}
+      <IntroSection
+        eyebrow={hero.eyebrow}
+        heading={hero.heading.join(" ")}
+        body={hero.body}
+        primaryCta={hero.primaryCta}
+        secondaryCta={hero.secondaryCta}
+        image={homeImages.hero}
+        cardLabel={labels.capabilities}
+        cardRows={capabilities.items.slice(0, 3).map((item) => ({
+          label: item.number,
+          value: item.title,
+        }))}
+      />
+
+      <StatementSection
+        eyebrow={positioning.eyebrow}
+        heading={positioning.heading}
+        body={positioning.body}
+      />
+
+      <BannerSection
+        eyebrow={standards.eyebrow}
+        heading={standards.heading}
+        body={standards.body}
+        cta={standards.cta}
+        image={homeImages.banner}
+      />
+
+      <CapabilitiesSection
+        eyebrow={capabilities.eyebrow}
+        heading={capabilities.heading}
+        items={capabilities.items}
+        images={homeImages.capabilities}
+        selected={capabilityIndex}
+        onSelect={selectCapability}
+      />
+
+      {entries.length > 0 && (
+        <JournalSection
+          title={labels.journal}
+          allLabel={labels.allStories}
+          allHref="/insight"
+          entries={entries}
+          fallbackImages={homeImages.journal}
         />
-      </Section>
+      )}
 
-      <Section tone={SECTION_ALT_TONE}>
-        <SectionHeader
-          eyebrow={capabilities.eyebrow}
-          title={capabilities.heading}
-        />
-        <div className="grid-cards grid-cards--3">
-          {capabilities.items.map((item) => (
-            <InfoCard
-              key={item.number}
-              title={`${item.number}. ${item.title}`}
-              description={item.body}
-            />
-          ))}
-        </div>
-      </Section>
+      <MethodSection
+        eyebrow={method.eyebrow}
+        heading={method.heading}
+        body={method.body}
+        cta={method.cta}
+      />
 
-      <Section>
-        <div className="grid-split">
-          <SectionHeader
-            eyebrow={method.eyebrow}
-            title={method.heading}
-            intro={method.body}
-          />
-          <p>
-            <Button href={method.cta.href} variant="ghost" brand="media">
-              {method.cta.label}
-            </Button>
-          </p>
-        </div>
-      </Section>
-
-      <Section tone={SECTION_ALT_TONE}>
-        <div className="grid-split">
-          <SectionHeader
-            eyebrow={standards.eyebrow}
-            title={standards.heading}
-            intro={standards.body}
-          />
-          <p>
-            <Button href={standards.cta.href} variant="outline" brand="media">
-              {standards.cta.label}
-            </Button>
-          </p>
-        </div>
-      </Section>
-
-      <ClosingBand {...home.closing} />
+      <ClosingBand
+        {...closing}
+        index={7}
+        label={layout.footer.contactLabel}
+        contact={{ label: layout.footer.contactLabel, value: site.email }}
+      />
     </>
   );
 }

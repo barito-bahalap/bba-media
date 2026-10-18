@@ -1,0 +1,46 @@
+.float-card {
+  display: grid;
+  gap: 0.75rem;
+  width: min(100%, 17rem);
+  padding: 1rem;
+  background-color: var(--vt-paper);
+  border-radius: var(--vt-radius);
+}
+
+.float-card__label {
+  margin: 0;
+  font-family: var(--vt-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--vt-ink-muted);
+}
+
+.float-card__rows {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.float-card__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--vt-line);
+}
+
+.float-card__key {
+  font-family: var(--vt-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vt-ink-muted);
+}
+
+.float-card__value {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-align: right;
+}

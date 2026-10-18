@@ -1,0 +1,33 @@
+.article-card-home__link {
+  display: grid;
+  gap: 0.75rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.article-card-home__img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  background-color: var(--vt-tint);
+}
+
+.article-card-home__meta {
+  margin: 0;
+  font-family: var(--vt-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vt-ink-muted);
+}
+
+.article-card-home__title {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.article-card-home__link:hover .article-card-home__title {
+  text-decoration: underline;
+}
