@@ -10,37 +10,7 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://media.baritobahalap.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://media.baritobahalap.com/en"/>
   </url>
-  <url>
-    <loc>https://media.baritobahalap.com/services</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://media.baritobahalap.com/services"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://media.baritobahalap.com/en/services"/>
-  </url>
-  <url>
-    <loc>https://media.baritobahalap.com/en/services</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://media.baritobahalap.com/services"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://media.baritobahalap.com/en/services"/>
-  </url>
-  <url>
-    <loc>https://media.baritobahalap.com/approach</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://media.baritobahalap.com/approach"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://media.baritobahalap.com/en/approach"/>
-  </url>
-  <url>
-    <loc>https://media.baritobahalap.com/en/approach</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://media.baritobahalap.com/approach"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://media.baritobahalap.com/en/approach"/>
-  </url>
-  <url>
-    <loc>https://media.baritobahalap.com/standards</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://media.baritobahalap.com/standards"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://media.baritobahalap.com/en/standards"/>
-  </url>
-  <url>
-    <loc>https://media.baritobahalap.com/en/standards</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://media.baritobahalap.com/standards"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://media.baritobahalap.com/en/standards"/>
-  </url>
-  <url>
+    <url>
     <loc>https://media.baritobahalap.com/about</loc>
     <xhtml:link rel="alternate" hreflang="id" href="https://media.baritobahalap.com/about"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://media.baritobahalap.com/en/about"/>
@@ -59,16 +29,6 @@
     <loc>https://media.baritobahalap.com/en/contact</loc>
     <xhtml:link rel="alternate" hreflang="id" href="https://media.baritobahalap.com/contact"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://media.baritobahalap.com/en/contact"/>
-  </url>
-  <url>
-    <loc>https://media.baritobahalap.com/careers</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://media.baritobahalap.com/careers"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://media.baritobahalap.com/en/careers"/>
-  </url>
-  <url>
-    <loc>https://media.baritobahalap.com/en/careers</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="https://media.baritobahalap.com/careers"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://media.baritobahalap.com/en/careers"/>
   </url>
   <url>
     <loc>https://media.baritobahalap.com/privacy</loc>

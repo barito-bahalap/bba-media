@@ -40,7 +40,6 @@ export default function ArticlesPage() {
       <PageHeader
         eyebrow={label}
         title={`${label} Barito Bahalap Media`}
-        body="Tulisan dan analisis dari redaksi BBM."
         tone="tint"
       />
 

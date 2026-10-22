@@ -40,7 +40,7 @@ export const legal = {
         heading: "Pilihan Anda dan kontak",
         paragraphs: [
           "Anda dapat menghubungi kami untuk menanyakan informasi yang telah dikirim atau meminta koreksi maupun penghapusan jika berlaku. Sebagian catatan mungkin perlu disimpan untuk memenuhi kewajiban hukum atau operasional.",
-          "Kontak: media@baritobahalap.com",
+          "Kontak: info@baritobahalap.com",
         ],
       },
     ],
@@ -83,7 +83,7 @@ export const legal = {
       {
         heading: "Kontak",
         paragraphs: [
-          "Pertanyaan mengenai ketentuan ini dapat dikirim ke media@baritobahalap.com. Setiap kerja sama tertentu diatur oleh ruang lingkup dan ketentuan yang disepakati secara terpisah.",
+          "Pertanyaan mengenai ketentuan ini dapat dikirim ke info@baritobahalap.com. Setiap kerja sama tertentu diatur oleh ruang lingkup dan ketentuan yang disepakati secara terpisah.",
         ],
       },
     ],

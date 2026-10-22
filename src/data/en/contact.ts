@@ -13,7 +13,7 @@ export const contact = {
     heading: "A useful first conversation",
     body: "A short outline is enough to begin. Include the context, objectives, audience, timeline, and any known approval or confidentiality requirements.",
     emailLabel: "Email",
-    email: "media@baritobahalap.com",
+    email: "info@baritobahalap.com",
     parentLabel: "Agency",
     parentName: "Barito Bahalap Agency",
   },

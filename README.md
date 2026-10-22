@@ -11,7 +11,7 @@ Contains:
 - Approach: six delivery stages, who decides what (client vs BBM), engagement models, contracting
 - Editorial standards: principles, press publication status, legal framework (UU 40/1999, UU PDP 27/2022), replies and corrections, FAQ
 - About: structure, roles, current stage and track record statement
-- Contact (inquiry form that prepares a mailto: message), careers (interest only), privacy policy, terms of use, 404
+- Contact (inquiry form that prepares a mailto: message), privacy policy, terms of use, 404
 
 Firewall rules for this repository:
 

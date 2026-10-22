@@ -9,7 +9,7 @@ export const home = {
     heading: ["Kejelasan adalah", "keunggulan strategis."],
     body: "Kami membantu organisasi berkomunikasi dengan tujuan, mengelola kehadiran publik, dan menjalankan media secara disiplin.",
     primaryCta: { label: "Diskusikan kebutuhan", href: "/contact" },
-    secondaryCta: { label: "Jelajahi layanan", href: "/services" },
+    secondaryCta: { label: "Jelajahi layanan", href: "/about" },
     note: "Strategi, narasi, dan eksekusi dalam satu standar kerja.",
   },
   positioning: {
@@ -26,19 +26,19 @@ export const home = {
         number: "01",
         title: "Komunikasi strategis",
         body: "Pemosisian, arsitektur pesan, pemetaan pemangku kepentingan, dan perencanaan komunikasi.",
-        href: "/services#strategic-communications",
+        href: "/about",
       },
       {
         number: "02",
         title: "Hubungan masyarakat",
         body: "Relasi media, materi pers, persiapan juru bicara, dan dukungan reputasi.",
-        href: "/services#public-relations",
+        href: "/about",
       },
       {
         number: "03",
         title: "Operasi media",
         body: "Perencanaan editorial, alur penerbitan, koordinasi kanal, dan pelaporan.",
-        href: "/services#media-operations",
+        href: "/about",
       },
     ],
   },
@@ -47,13 +47,13 @@ export const home = {
     heading:
       "Pikirkan dengan jernih. Selaraskan pesan. Eksekusi dengan kendali.",
     body: "Kami memulai dari konteks dan tujuan, menyusun narasi bersama, lalu mengoordinasikan pelaksanaan dan mengevaluasi perubahan yang dihasilkan.",
-    cta: { label: "Lihat pendekatan kami", href: "/approach" },
+    cta: { label: "Lihat pendekatan kami", href: "/about" },
   },
   standards: {
     eyebrow: "Standar kami",
     heading: "Kredibilitas dibangun melalui detail.",
     body: "Akurasi, konteks, kerahasiaan, dan akuntabilitas adalah syarat kerja, bukan tambahan opsional.",
-    cta: { label: "Baca standar kami", href: "/standards" },
+    cta: { label: "Baca standar kami", href: "/about" },
   },
   closing: {
     heading: "Sampaikan kebutuhan Anda. Kami bantu merumuskan pekerjaannya.",

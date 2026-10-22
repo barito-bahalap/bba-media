@@ -13,7 +13,7 @@ export const contact = {
     heading: "Percakapan awal yang bermanfaat",
     body: "Ringkasan singkat sudah cukup untuk memulai. Sertakan konteks, tujuan, audiens, tenggat waktu, serta ketentuan persetujuan atau kerahasiaan yang sudah diketahui.",
     emailLabel: "Email",
-    email: "media@baritobahalap.com",
+    email: "info@baritobahalap.com",
     parentLabel: "Agensi",
     parentName: "Barito Bahalap Agency",
   },

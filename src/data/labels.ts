@@ -11,7 +11,7 @@ export const HOME_LABELS = {
   },
   id: {
     capabilities: "Layanan",
-    journal: "Terbaru dari redaksi",
+    journal: "Terbaru",
     allStories: "Semua tulisan",
     readMore: "Baca",
     latest: "Terbaru",

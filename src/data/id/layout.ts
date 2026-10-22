@@ -34,34 +34,23 @@ export const layout = {
         title: "Agensi",
         links: [
           { label: "Beranda", href: "/" },
-          { label: "Layanan", href: "/services" },
-          { label: "Pendekatan", href: "/approach" },
-          { label: "Standar", href: "/standards" },
-          { label: "Tentang", href: "/about" },
-          { label: "Insight", href: "/insight" },
-        ],
-      },
-      {
-        title: "Insight",
-        links: [
-          { label: "Artikel & Insight", href: "/insight" },
-          { label: "Redaksi", href: "/redaksi" },
-          { label: "Semua Layanan", href: "/services" },
+          { label: "Insights", href: "/insight" },
         ],
       },
       {
         title: "Informasi",
         links: [
-          { label: "Karier", href: "/careers" },
+          { label: "Tentang", href: "/about" },
           { label: "Kontak", href: "/contact" },
+        ],
+      },
+      {
+        title: "Legal",
+        links: [
           { label: "Privasi", href: "/privacy" },
           { label: "Ketentuan", href: "/terms" },
         ],
       },
-    ],
-    legal: [
-      { label: "Privasi", href: "/privacy" },
-      { label: "Ketentuan", href: "/terms" },
     ],
   },
 } as const;

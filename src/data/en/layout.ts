@@ -33,38 +33,24 @@ export const layout = {
       {
         title: "Agency",
         links: [
-          { label: "Beranda", href: "/" },
-          { label: "Services", href: "/services" },
-          { label: "Approach", href: "/approach" },
-          { label: "Standards", href: "/standards" },
-          { label: "About", href: "/about" },
+          { label: "Home", href: "/" },
           { label: "Insights", href: "/insight" },
-        ],
-      },
-      {
-        title: "Services",
-        links: [{ label: "All Services", href: "/services" }],
-      },
-      {
-        title: "Insights",
-        links: [
-          { label: "Articles & Insights", href: "/insight" },
-          { label: "Editorial", href: "/redaksi" },
         ],
       },
       {
         title: "Information",
         links: [
-          { label: "Careers", href: "/careers" },
+          { label: "About", href: "/about" },
           { label: "Contact", href: "/contact" },
+        ],
+      },
+      {
+        title: "Legal",
+        links: [
           { label: "Privacy", href: "/privacy" },
           { label: "Terms", href: "/terms" },
         ],
       },
-    ],
-    legal: [
-      { label: "Privacy", href: "/privacy" },
-      { label: "Terms", href: "/terms" },
     ],
   },
 } as const;

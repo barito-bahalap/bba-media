@@ -104,12 +104,6 @@ export default function ArticlePage() {
               __html: DOMPurify.sanitize(article.body_html),
             }}
           />
-
-          <footer className="article__foot">
-            <SmartLink href="/redaksi">
-              Kebijakan editorial dan hak jawab
-            </SmartLink>
-          </footer>
         </div>
       </article>
     </>

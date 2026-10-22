@@ -10,17 +10,13 @@ const KEY = process.env.VITE_SUPABASE_ANON_KEY;
 
 const staticPaths = [
   "/",
-  "/services",
-  "/approach",
-  "/standards",
   "/about",
   "/contact",
   "/insight",
-  "/redaksi",
-  "/careers",
   "/privacy",
   "/terms",
 ];
+
 const esc = (s = "") =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
@@ -49,7 +45,7 @@ const items = articles.map(
   (a) =>
     `<item><title>${esc(a.title)}</title><link>${SITE}/insight/${a.slug}</link><guid>${SITE}/insight/${a.slug}</guid><pubDate>${new Date(a.published_at).toUTCString()}</pubDate>${a.category_name ? `<category>${esc(a.category_name)}</category>` : ""}<description>${esc(a.excerpt ?? "")}</description></item>`,
 );
-const rss = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Barito Bahalap Media</title><link>${SITE}/insight</link><description>Insight dari redaksi BBM</description><language>id</language>\n${items.join("\n")}\n</channel></rss>\n`;
+const rss = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Barito Bahalap Media</title><link>${SITE}/insight</link><description>Insight dari BBM</description><language>id</language>\n${items.join("\n")}\n</channel></rss>\n`;
 
 mkdirSync("public", { recursive: true });
 writeFileSync("public/sitemap.xml", sitemap);

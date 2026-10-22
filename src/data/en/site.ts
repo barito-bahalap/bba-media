@@ -9,13 +9,10 @@ export const site = {
   locale: "en",
   language: "English",
   defaultLocale: "id",
-  email: "media@baritobahalap.com",
+  email: "info@baritobahalap.com",
 
   navigation: [
-    { label: "Beranda", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "Approach", href: "/approach" },
-    { label: "Standards", href: "/standards" },
+    { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Insights", href: "/insight" },
   ],

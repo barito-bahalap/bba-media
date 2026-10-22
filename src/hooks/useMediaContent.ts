@@ -89,10 +89,6 @@ export function useContactContent() {
   return useLocale().content.contact;
 }
 
-export function useCareersContent() {
-  return useLocale().content.careers;
-}
-
 export function useLegalContent() {
   const { privacy, terms } = useLocale().content.legal;
   return { privacy: toLegalPage(privacy), terms: toLegalPage(terms) };

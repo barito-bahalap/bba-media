@@ -9,13 +9,10 @@ export const site = {
   locale: "id",
   language: "Bahasa Indonesia",
   defaultLocale: "id",
-  email: "media@baritobahalap.com",
+  email: "info@baritobahalap.com",
 
   navigation: [
     { label: "Beranda", href: "/" },
-    { label: "Layanan", href: "/services" },
-    { label: "Pendekatan", href: "/approach" },
-    { label: "Standar", href: "/standards" },
     { label: "Tentang", href: "/about" },
     { label: "Insight", href: "/insight" },
   ],

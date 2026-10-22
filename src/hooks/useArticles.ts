@@ -1,11 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import {
-  fetchArticle,
-  fetchArticles,
-  fetchCategories,
-  fetchCorrections,
-  fetchSettings,
-} from "@/services/articles";
+import { fetchArticle, fetchArticles } from "@/services/articles";
+import { fetchCategories, fetchCorrections } from "@/services/articles";
+import { fetchSettings } from "@/services/articles";
 
 export function useNewsroomSettings() {
   return useQuery({ queryKey: ["settings"], queryFn: fetchSettings });
