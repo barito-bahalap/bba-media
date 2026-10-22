@@ -33,22 +33,22 @@ export const layout = {
       {
         title: "Agency",
         links: [
-          { label: "Home", href: "/" },
-          { label: "Insights", href: "/insight" },
+          { label: "Home", href: "/en/" },
+          { label: "Insights", href: "/en/insight" },
         ],
       },
       {
         title: "Information",
         links: [
-          { label: "About", href: "/about" },
-          { label: "Contact", href: "/contact" },
+          { label: "About", href: "/en/about" },
+          { label: "Contact", href: "/en/contact" },
         ],
       },
       {
         title: "Legal",
         links: [
-          { label: "Privacy", href: "/privacy" },
-          { label: "Terms", href: "/terms" },
+          { label: "Privacy", href: "/en/privacy" },
+          { label: "Terms", href: "/en/terms" },
         ],
       },
     ],

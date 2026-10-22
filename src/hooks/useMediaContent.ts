@@ -69,18 +69,6 @@ export function useHomeContent() {
   return useLocale().content.home;
 }
 
-export function useServicesContent() {
-  return useLocale().content.services;
-}
-
-export function useApproachContent() {
-  return useLocale().content.approach;
-}
-
-export function useStandardsContent() {
-  return useLocale().content.standards;
-}
-
 export function useAboutContent() {
   return useLocale().content.about;
 }

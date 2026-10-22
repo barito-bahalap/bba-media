@@ -12,14 +12,14 @@ export const site = {
   email: "info@baritobahalap.com",
 
   navigation: [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Insights", href: "/insight" },
+    { label: "Home", href: "/en/" },
+    { label: "About", href: "/en/about" },
+    { label: "Insights", href: "/en/insight" },
   ],
 
   cta: {
     label: "Discuss a brief",
-    href: "/contact",
+    href: "/en/contact",
   },
 } as const;
 

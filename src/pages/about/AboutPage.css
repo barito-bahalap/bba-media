@@ -1,0 +1,116 @@
+.about-page [id] {
+  scroll-margin-top: 5rem;
+}
+
+.about-page .band + .band,
+.about-page .band + .band--split,
+.about-page section + section:not(.closing) {
+  border-top: 1px solid var(--vt-rule);
+}
+
+.about-intro {
+  display: grid;
+  gap: 1rem;
+  max-width: 44rem;
+}
+
+/* Approach: numbered steps */
+.about-steps {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-steps__item {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--vt-rule);
+}
+
+.about-steps__item:last-child {
+  border-bottom: 1px solid var(--vt-rule);
+}
+
+.about-steps__num {
+  padding-top: 0.2rem;
+  color: var(--vt-teal);
+  font-family: var(--vt-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.about-steps__title {
+  margin: 0 0 0.4rem;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.about-steps__body {
+  margin: 0;
+  max-width: 60ch;
+  color: var(--vt-soft);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+/* Services: 2x2 cards */
+.about-services {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-service {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  padding: 1.5rem;
+  border: 1px solid var(--vt-rule);
+}
+
+.about-service__num {
+  color: var(--vt-teal);
+  font-family: var(--vt-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.about-service__title {
+  margin: 0;
+  font-size: clamp(1.25rem, 3vw, 1.625rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.about-service__summary {
+  margin: 0;
+  color: var(--vt-soft);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.about-service .vt-note {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .about-services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .about-service {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-page .split--two .split__head {
+    position: sticky;
+    top: 6rem;
+    align-self: start;
+  }
+}
