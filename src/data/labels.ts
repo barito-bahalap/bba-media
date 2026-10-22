@@ -1,13 +1,12 @@
 export const HOME_LABELS = {
   en: {
     capabilities: "Capabilities",
-    journal: "Latest from the desk",
+    journal: "Latest",
     allStories: "All stories",
     readMore: "Read",
     latest: "Latest",
-    topStory: "Top story",
+    topStory: "Highlights",
     partnership: "Partnership content",
-    sample: "Sample",
   },
   id: {
     capabilities: "Layanan",
@@ -17,6 +16,5 @@ export const HOME_LABELS = {
     latest: "Terbaru",
     topStory: "Sorotan",
     partnership: "Konten Kemitraan",
-    sample: "Contoh",
   },
 } as const;
