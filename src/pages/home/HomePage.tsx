@@ -1,27 +1,19 @@
 // Style
 import "./HomePage.css";
 // Hooks
-import {
-  useHomeNews,
-  useSelectedIndex,
-  useSiteContent,
-  useWordmark,
-} from "@/hooks";
+import { useHomeNews, useSelectedIndex } from "@/hooks";
+import { useSiteContent, useWordmark } from "@/hooks";
 import { useHomeContent, useLocale } from "@/hooks";
 // Components
 import { ClosingBand, SEO } from "@/components";
-import {
-  BannerSection,
-  CapabilitiesSection,
-  NewsroomSection,
-} from "./_components";
+import { CapabilitiesSection, NewsroomSection } from "./_components";
 import { MethodSection, StatementSection } from "./_components";
-import { IntroSection, MastheadSection } from "./_components";
-// Data
-import { homeImages } from "@/data/media";
-import { HOME_LABELS } from "@/data/labels";
+import { IntroSection, MastheadSection, BannerSection } from "./_components";
 // Utils
+import { HOME_LABELS } from "@/data/labels";
 import { homeSchema } from "@/domain/schema";
+// Assets
+import { HomeImages } from "@/assets";
 
 export default function HomePage() {
   const { site, seoBase, href, layout } = useSiteContent();
@@ -56,7 +48,7 @@ export default function HomePage() {
         body={hero.body}
         primaryCta={hero.primaryCta}
         secondaryCta={hero.secondaryCta}
-        image={homeImages.hero}
+        image={HomeImages.hero}
         cardLabel={labels.capabilities}
         cardRows={capabilities.items.slice(0, 3).map((item) => ({
           label: String(item.number),
@@ -75,14 +67,18 @@ export default function HomePage() {
         heading={standards.heading}
         body={standards.body}
         cta={standards.cta}
-        image={homeImages.banner}
+        image={HomeImages.banner}
       />
 
       <CapabilitiesSection
         eyebrow={capabilities.eyebrow}
         heading={capabilities.heading}
         items={capabilities.items}
-        images={homeImages.capabilities}
+        images={[
+          HomeImages.capabilities1,
+          HomeImages.capabilities2,
+          HomeImages.capabilities3,
+        ]}
         selected={capabilityIndex}
         onSelect={selectCapability}
       />

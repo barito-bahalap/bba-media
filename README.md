@@ -27,7 +27,6 @@ Editorial and legal rules:
 - The schema type is Organization. Do not change it to NewsMediaOrganization before the conditions above are met.
 - Never add clients, case studies, testimonials, awards or coverage that do not exist. The track record statement on About must stay until real, consented engagements are available.
 - Commissioned communications are always described as commissioned. Do not describe client work as independent editorial work.
-- All copy lives in `src/data`. Placeholders (emails, dates, domain) must be resolved before launch.
 
 Structure:
 

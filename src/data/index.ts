@@ -12,5 +12,3 @@ export function getContent(locale: LocaleCode): ContentBundle {
 
 export { HOLDING_URL, LOCATION } from "./constants";
 export { HOME_LABELS } from "./labels";
-export { homeImages } from "./media";
-export { placeholders } from "./placeholder";
