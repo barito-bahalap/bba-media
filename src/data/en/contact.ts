@@ -6,19 +6,19 @@ export const contact = {
   },
   hero: {
     eyebrow: "Contact",
-    heading: ["Start with the brief."],
-    body: "Tell us what needs to change, who needs to be reached, and what constraints shape the work. We will help define a practical scope.",
+    heading: ["Tell us what you need."],
+    body: "What are you trying to achieve, who needs to be reached, and what constraints should we consider? We'll help define a realistic scope of work.",
   },
   details: {
-    heading: "A useful first conversation",
-    body: "A short outline is enough to begin. Include the context, objectives, audience, timeline, and any known approval or confidentiality requirements.",
+    heading: "Keep it brief",
+    body: "A short summary is enough. Context, objectives, and deadlines help us respond appropriately.",
     emailLabel: "Email",
     email: "info@baritobahalap.com",
     parentLabel: "Agency",
     parentName: "Barito Bahalap Agency",
   },
   form: {
-    heading: "Tell us about the work",
+    heading: "Send a message",
     fields: {
       name: {
         label: "Name",
@@ -35,31 +35,31 @@ export const contact = {
         required: "Please enter a valid email address.",
       },
       service: {
-        label: "Area of support",
+        label: "Service needed",
         placeholder: "Select a service",
         options: [
-          "Strategic communications",
-          "Public relations",
-          "Media operations",
-          "Content and editorial production",
+          "Strategic Communications",
+          "Public Relations",
+          "Media Operations",
+          "Content Production and Editorial",
           "Not sure yet",
         ],
       },
       message: {
-        label: "Brief",
-        placeholder: "Context, objectives, audience, timeline, and constraints",
-        required: "Please provide a short brief.",
+        label: "Your needs",
+        placeholder: "Objectives, audience, and timeline",
+        required: "Please describe what you need.",
       },
     },
-    consent: "I agree to be contacted about this inquiry.",
-    consentRequired: "Consent is required to send this inquiry.",
-    submit: "Send inquiry",
+    consent: "I agree to be contacted regarding this inquiry.",
+    consentRequired: "Please check the consent box to continue.",
+    submit: "Submit Inquiry",
     submitting: "Sending…",
-    success: "Thank you. Your inquiry has been received.",
+    success: "Thank you. We have received your inquiry.",
     error:
-      "Your inquiry could not be sent. Please try again or email us directly.",
+      "Your inquiry could not be sent. Please try again or contact us by email.",
     privacyNote:
-      "Information submitted through this form will be used to respond to your inquiry.",
+      "Information submitted through this form is used only to respond to your inquiry.",
   },
 } as const;
 

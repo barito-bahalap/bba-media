@@ -1,34 +1,34 @@
 export const layout = {
   skipLink: "Skip to main content",
   menu: {
-    open: "Menu",
+    open: "Open menu",
     close: "Close menu",
-    label: "Main navigation",
-    primaryNav: "Main navigation",
+    label: "Primary navigation",
+    primaryNav: "Primary navigation",
     mobileNav: "Mobile navigation",
   },
   language: {
     label: "Language",
     en: "English",
-    id: "Bahasa Indonesia",
+    id: "Indonesian",
   },
   actions: {
-    contact: "Discuss a brief",
+    contact: "Tell us what you need",
     backToTop: "Back to top",
     learnMore: "Learn more",
     viewAll: "View all",
   },
   status: {
-    loading: "Loading content",
-    error: "Something went wrong",
+    loading: "Loading",
+    error: "An error occurred",
     notFound: "Page not found",
   },
   footer: {
-    navigationLabel: "Footer navigation",
+    navigationLabel: "Navigation",
     contactLabel: "Contact",
-    statement: "Pemikiran jernih. Komunikasi tepercaya. Eksekusi konsisten.",
-    rights: "Hak cipta dilindungi.",
-    parentLabel: "Bagian dari Barito Bahalap Agency",
+    rights: "All rights reserved.",
+    statement: "Clear, accountable communication.",
+    parentLabel: "Part of Barito Bahalap Agency",
     groups: [
       {
         title: "Agency",

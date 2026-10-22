@@ -1,5 +1,5 @@
 export const layout = {
-  skipLink: "Lewati ke konten utama",
+  skipLink: "Lompat ke konten utama",
   menu: {
     open: "Menu",
     close: "Tutup menu",
@@ -13,28 +13,28 @@ export const layout = {
     id: "Bahasa Indonesia",
   },
   actions: {
-    contact: "Diskusikan kebutuhan",
+    contact: "Ceritakan kebutuhan Anda",
     backToTop: "Kembali ke atas",
     learnMore: "Pelajari lebih lanjut",
     viewAll: "Lihat semua",
   },
   status: {
-    loading: "Memuat konten",
+    loading: "Memuat",
     error: "Terjadi kesalahan",
     notFound: "Halaman tidak ditemukan",
   },
   footer: {
     navigationLabel: "Navigasi",
     contactLabel: "Kontak",
-    rights: "Hak cipta dilindungi.",
-    statement: "Pemikiran jernih. Komunikasi tepercaya. Eksekusi konsisten.",
+    rights: "Seluruh hak dilindungi.",
+    statement: "Komunikasi yang jelas dan bisa dipertanggungjawabkan.",
     parentLabel: "Bagian dari Barito Bahalap Agency",
     groups: [
       {
         title: "Agensi",
         links: [
           { label: "Beranda", href: "/" },
-          { label: "Insights", href: "/insight" },
+          { label: "Wawasan", href: "/insight" },
         ],
       },
       {

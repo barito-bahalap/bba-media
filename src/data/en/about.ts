@@ -4,39 +4,37 @@ export const about: AboutContent = {
   seo: {
     title: "About | Barito Bahalap Media",
     description:
-      "Barito Bahalap Media is the strategic communications and media operations unit of Barito Bahalap Agency, working to documented editorial and accountability standards.",
+      "Barito Bahalap Media is the strategic communications and media operations unit of Barito Bahalap Agency, operating under documented editorial standards.",
   },
 
   hero: {
     eyebrow: "About Us",
-    heading: [
-      "Strategic communications and media operations for organizations that work in the public sphere.",
-    ],
-    body: "Barito Bahalap Media helps corporations, agencies, and institutions define their messages, manage media relationships, and run communications through clear, accountable processes.",
+    heading: ["Strategic Communications & Media."],
+    body: "Barito Bahalap Media helps corporations, organizations, and institutions develop messaging, work with the media, and manage publishing operations effectively.",
   },
 
   story: {
-    heading: "Strategy and execution must move together.",
+    heading: "Good messaging requires a well-structured process.",
     paragraphs: [
-      "Standalone content and occasional publications are rarely enough. Organizations need a clear position, consistent messaging, and a working process that makes sure the message reaches the right public.",
-      "Barito Bahalap Media brings strategic communications, public relations, editorial work, and media operations into one coordinated practice. Every engagement is designed around the organization's context, clear responsibilities, and the outcomes it intends to achieve.",
+      "Occasional content alone is rarely enough. Organizations need clear positioning, consistent messaging, and a workflow that ensures their messages reach the right people.",
+      "Barito Bahalap Media brings together communications strategy, public relations, editorial work, and media operations in one team. Every engagement begins with an understanding of the organization's context, who is responsible, and what outcomes need to be achieved.",
     ],
   },
 
   values: {
-    heading: "Working values",
+    heading: "Our values",
     items: [
       {
         title: "Clarity",
-        body: "Objectives, messages, and next steps must be understood by everyone involved.",
+        body: "Everyone involved understands the objectives, intended message, and next steps, ensuring that work remains focused, coordinated, and aligned.",
       },
       {
         title: "Discipline",
-        body: "Consistent, repeatable processes produce communications that can be relied on.",
+        body: "Consistent, measurable, and organized workflows help maintain quality and ensure that every commitment can be relied upon.",
       },
       {
         title: "Credibility",
-        body: "Facts, context, and public trust are the foundation of every engagement.",
+        body: "Every engagement is grounded in facts, appropriate context, and verifiable information to build lasting trust.",
       },
     ],
   },
@@ -47,149 +45,148 @@ export const about: AboutContent = {
       {
         number: "01",
         title: "Understand the context",
-        body: "We review the organization, its audiences, its environment, and its constraints before recommending any communications step.",
+        body: "We study the organization, its audience, and existing constraints before making recommendations.",
       },
       {
         number: "02",
-        title: "Set the objectives",
-        body: "We agree on the intended outcome, the decision makers, audience priorities, and the indicators used to measure progress.",
+        title: "Define the objectives",
+        body: "We agree on the expected outcomes, decision-makers, primary audience, and how progress will be measured.",
       },
       {
         number: "03",
-        title: "Build the narrative",
-        body: "We align the core message, supporting evidence, tone, and the role of each channel so communications stay consistent without becoming repetitive.",
+        title: "Develop the narrative",
+        body: "We align key messages, supporting evidence, tone, and channel responsibilities to maintain consistent communication without unnecessary repetition.",
       },
       {
         number: "04",
-        title: "Coordinate delivery",
-        body: "Responsibilities, approval mechanisms, schedules, and workflows are set before production begins.",
+        title: "Execute",
+        body: "Responsibilities, approval processes, and timelines are established before production begins.",
       },
       {
         number: "05",
-        title: "Evaluate and adjust",
-        body: "We review delivery and response, identify gaps, and adjust the approach based on evidence rather than activity alone.",
+        title: "Evaluate",
+        body: "We review outcomes and responses, then adjust our approach based on evidence.",
       },
     ],
   },
 
   services: {
     intro: {
-      heading: "Scope follows purpose.",
-      body: "We do not start from a channel or a specific deliverable. We start from the problem to be solved, the people who need to understand the message, and the outcomes that matter to the organization.",
+      heading: "The scope follows the objective.",
+      body: "We begin with the problem to be solved and the people who need to understand the message. Channels and deliverables are determined afterward.",
     },
     items: [
       {
         id: "strategic-communications",
         number: "01",
-        title: "Strategic communications",
+        title: "Strategic Communications",
         summary:
-          "Defining position, building narrative, and aligning communications with organizational priorities.",
+          "Defining positioning, developing narratives, and aligning communications with organizational priorities.",
         deliverables: [
           "Communications strategy and planning",
-          "Positioning and message architecture",
+          "Positioning and messaging frameworks",
           "Stakeholder and audience mapping",
-          "Campaign concepts and narrative frameworks",
-          "Communications risk assessment",
+          "Campaign concepts",
+          "Communications risk assessments",
         ],
         outcome:
-          "A clear communications direction that teams can carry out consistently.",
+          "A clear communications direction that teams can execute consistently.",
       },
       {
         id: "public-relations",
         number: "02",
-        title: "Public relations",
+        title: "Public Relations",
         summary:
-          "Building productive media relationships and delivering information that is accurate, relevant, and timely.",
+          "Building effective media relationships and delivering information accurately and on time.",
         deliverables: [
           "Media relations and outreach",
           "Press releases and media statements",
-          "Media kits and briefing materials",
+          "Information packages and briefing materials",
           "Spokesperson and interview preparation",
           "Reputation management and issue response support",
         ],
         outcome:
-          "More focused engagement with the media, stakeholders, and the public.",
+          "More focused interactions with the media, stakeholders, and the public.",
       },
       {
         id: "media-operations",
         number: "03",
-        title: "Media operations",
+        title: "Media Operations",
         summary:
-          "Building the workflows, editorial discipline, and reporting systems that keep communication channels managed consistently.",
+          "Establishing workflows, editorial discipline, and reporting to ensure communication channels are managed consistently.",
         deliverables: [
-          "Editorial calendar and content planning",
-          "Publishing workflow and approval mechanisms",
-          "Channel coordination and content operations",
+          "Editorial calendars and content planning",
+          "Publishing workflows and approval processes",
+          "Channel and content coordination",
           "Performance monitoring and reporting",
           "Operational documentation and handover",
         ],
         outcome:
-          "A structured, repeatable working system for day-to-day media needs.",
+          "A structured, repeatable workflow for day-to-day media operations.",
       },
       {
         id: "content-production",
         number: "04",
-        title: "Content and editorial production",
+        title: "Content Production and Editorial",
         summary:
-          "Turning strategy into content that is coherent, relevant to its audience, and suited to each channel.",
+          "Turning strategy into coherent content that resonates with audiences and suits the character of each channel.",
         deliverables: [
-          "Editorial direction and scriptwriting",
+          "Editorial direction and copywriting",
           "Corporate and institutional narratives",
           "Campaign content packages",
           "Cross-channel content adaptation",
           "Editorial review and quality control",
         ],
-        outcome:
-          "Content with a clear purpose, not just filler for a publishing calendar.",
+        outcome: "Content with a clear purpose before production begins.",
       },
     ],
   },
 
   standards: {
-    heading: "Working standards",
-    body: "These standards apply at every stage, from planning to evaluation.",
+    heading: "Our standards",
+    body: "These standards apply at every stage, from planning through evaluation.",
     items: [
       {
         number: "01",
         title: "Accuracy",
-        body: "Key facts are verified, confirmed information is separated from interpretation, and material errors are corrected when found.",
+        body: "We verify important facts, distinguish confirmed information from interpretation, and correct material errors as soon as they are identified.",
       },
       {
         number: "02",
         title: "Context",
-        body: "Audience, timing, implications, and relevant background are considered before a message or recommendation is drafted.",
+        body: "We consider the audience, timing, and background before developing messages or recommendations.",
       },
       {
         number: "03",
         title: "Accountability",
-        body: "Responsibilities, approvals, sources, and outputs are documented clearly enough to be reviewed and answered for.",
+        body: "Responsibilities, approvals, sources, and deliverables are documented clearly enough to be reviewed.",
       },
       {
         number: "04",
         title: "Confidentiality",
-        body: "Clients' non-public information is accessed only under agreed authorization and is not shared with other business units under Barito Bahalap Agency.",
+        body: "Unpublished client information is accessible only to the people responsible for handling it.",
       },
       {
         number: "05",
-        title: "Editorial independence",
-        body: "Editorial and publication decisions are made under Barito Bahalap Media's editorial standards and applicable law, including the Press Law (UU Pers) for publishing activities.",
+        title: "Editorial Independence",
+        body: "Editorial and publishing decisions follow Barito Bahalap Media's editorial standards and applicable laws, including Indonesia's Press Law for publishing activities.",
       },
       {
         number: "06",
         title: "Integrity",
-        body: "We avoid misleading claims, fabricated evidence, and communication practices that deliberately obscure material facts.",
+        body: "We do not make misleading claims, fabricate evidence, or conceal material facts.",
       },
     ],
   },
 
   agency: {
     heading: "Part of Barito Bahalap Agency",
-    body: "Barito Bahalap Media operates as the communications and media unit under Barito Bahalap Agency, which oversees governance, contracts, and compliance. Barito Bahalap Media's identity, workflows, client information handling, and editorial decisions are managed separately from the other business units in the group.",
+    body: "Barito Bahalap Agency oversees contracts, finances, and compliance. Barito Bahalap Media operates with its own team, workflows, client data, and editorial decisions.",
   },
 
   engagement: {
-    heading: "A clear scope before production begins.",
-    body: "Every engagement starts by setting objectives, stakeholders, constraints, approval mechanisms, and success indicators. Scope and deliverables are agreed before work begins.",
+    heading: "Scope is agreed upon before production begins.",
+    body: "Every engagement starts with agreement on objectives, stakeholders, constraints, approval processes, and measures of success.",
     cta: {
       label: "Discuss your needs",
       href: "/en/contact",

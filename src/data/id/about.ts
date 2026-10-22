@@ -4,39 +4,36 @@ export const about: AboutContent = {
   seo: {
     title: "Tentang | Barito Bahalap Media",
     description:
-      "Barito Bahalap Media adalah unit komunikasi strategis dan operasional media di bawah Barito Bahalap Agency, dengan standar editorial dan akuntabilitas yang terdokumentasi.",
+      "Barito Bahalap Media adalah unit komunikasi strategis dan operasional media di bawah Barito Bahalap Agency, dengan standar editorial yang terdokumentasi.",
   },
 
   hero: {
     eyebrow: "Tentang Kami",
-    heading: [
-      "Komunikasi strategis dan operasional media untuk organisasi yang bekerja di ruang publik.",
-    ],
-    body: "Barito Bahalap Media membantu korporasi, lembaga, dan institusi merumuskan pesan, mengelola hubungan dengan media, dan menjalankan komunikasi dengan proses yang jelas dan dapat dipertanggungjawabkan.",
+    heading: ["Komunikasi dan media strategis."],
+    body: "Barito Bahalap Media membantu korporasi, lembaga, dan institusi menyusun pesan, bekerja dengan media, dan menjalankan publikasi secara rapi.",
   },
 
   story: {
-    heading: "Strategi dan eksekusi harus berjalan beriringan.",
+    heading: "Pesan yang baik butuh proses yang rapi.",
     paragraphs: [
-      "Konten yang berdiri sendiri dan publikasi yang sesekali dilakukan jarang cukup. Organisasi membutuhkan posisi yang jelas, pesan yang konsisten, dan proses kerja yang memastikan pesan itu sampai kepada publik yang tepat.",
-      "Barito Bahalap Media menyatukan komunikasi strategis, hubungan masyarakat, kerja editorial, dan operasional media dalam satu praktik yang terkoordinasi. Setiap pekerjaan dirancang berdasarkan konteks organisasi, kejelasan tanggung jawab, dan hasil yang ingin dicapai.",
+      "Konten yang terbit sesekali jarang cukup. Organisasi perlu posisi yang jelas, pesan yang konsisten, dan cara kerja yang memastikan pesan itu sampai ke orang yang tepat.",
+      "Barito Bahalap Media menggabungkan strategi komunikasi, hubungan masyarakat, kerja editorial, dan operasional media dalam satu tim. Setiap pekerjaan dimulai dari konteks organisasi, siapa yang bertanggung jawab, dan hasil yang ingin dicapai.",
     ],
   },
-
   values: {
     heading: "Nilai kerja",
     items: [
       {
         title: "Kejelasan",
-        body: "Tujuan, pesan, dan langkah berikutnya harus dapat dipahami oleh semua pihak yang terlibat.",
+        body: "Setiap pihak memahami tujuan, pesan yang ingin disampaikan, serta langkah berikutnya agar pekerjaan berjalan terarah dan selaras.",
       },
       {
         title: "Disiplin",
-        body: "Proses kerja yang konsisten dan dapat diulang menghasilkan komunikasi yang dapat diandalkan.",
+        body: "Proses kerja yang konsisten, terukur, dan terorganisasi membantu menjaga kualitas hasil serta memastikan setiap komitmen dapat diandalkan.",
       },
       {
         title: "Kredibilitas",
-        body: "Fakta, konteks, dan kepercayaan publik menjadi dasar setiap pekerjaan.",
+        body: "Setiap pekerjaan berpijak pada fakta, konteks yang tepat, dan informasi yang dapat dipertanggungjawabkan untuk membangun kepercayaan jangka panjang.",
       },
     ],
   },
@@ -47,35 +44,35 @@ export const about: AboutContent = {
       {
         number: "01",
         title: "Memahami konteks",
-        body: "Kami menelaah organisasi, audiens, lingkungan, dan batasan yang ada sebelum merekomendasikan langkah komunikasi.",
+        body: "Kami mempelajari organisasi, audiens, dan batasan yang ada sebelum merekomendasikan apa pun.",
       },
       {
         number: "02",
         title: "Menetapkan tujuan",
-        body: "Kami menyepakati hasil yang diharapkan, pengambil keputusan, prioritas audiens, dan indikator untuk mengukur kemajuan.",
+        body: "Kami menyepakati hasil yang diharapkan, pengambil keputusan, audiens utama, dan cara mengukur kemajuan.",
       },
       {
         number: "03",
         title: "Menyusun narasi",
-        body: "Kami menyelaraskan pesan utama, bukti pendukung, nada, dan peran setiap kanal agar komunikasi konsisten tanpa repetitif.",
+        body: "Pesan utama, bukti pendukung, nada, dan peran tiap kanal diselaraskan agar komunikasi konsisten tanpa berulang-ulang.",
       },
       {
         number: "04",
-        title: "Mengoordinasikan pelaksanaan",
-        body: "Tanggung jawab, mekanisme persetujuan, jadwal, dan alur kerja ditetapkan sebelum produksi dimulai.",
+        title: "Menjalankan",
+        body: "Penanggung jawab, jalur persetujuan, dan jadwal ditetapkan sebelum produksi dimulai.",
       },
       {
         number: "05",
-        title: "Mengevaluasi dan menyesuaikan",
-        body: "Kami meninjau pelaksanaan dan respons, mengidentifikasi kesenjangan, dan menyesuaikan pendekatan berdasarkan bukti, bukan sekadar aktivitas.",
+        title: "Mengevaluasi",
+        body: "Kami meninjau hasil dan respons, lalu menyesuaikan pendekatan berdasarkan bukti.",
       },
     ],
   },
 
   services: {
     intro: {
-      heading: "Ruang lingkup mengikuti tujuan.",
-      body: "Kami tidak memulai dari kanal atau bentuk hasil kerja tertentu. Kami memulai dari masalah yang perlu diselesaikan, pihak yang perlu memahami pesan, dan hasil yang benar-benar penting bagi organisasi.",
+      heading: "Lingkup mengikuti tujuan.",
+      body: "Kami mulai dari masalah yang ingin diselesaikan dan siapa yang perlu memahami pesannya. Pilihan kanal dan bentuk hasil menyusul setelah itu.",
     },
     items: [
       {
@@ -83,29 +80,29 @@ export const about: AboutContent = {
         number: "01",
         title: "Komunikasi strategis",
         summary:
-          "Menetapkan posisi, membangun narasi, dan menyelaraskan komunikasi dengan prioritas organisasi.",
+          "Menentukan posisi, menyusun narasi, dan menyelaraskan komunikasi dengan prioritas organisasi.",
         deliverables: [
           "Strategi dan perencanaan komunikasi",
-          "Penentuan posisi dan arsitektur pesan",
+          "Penentuan posisi dan kerangka pesan",
           "Pemetaan pemangku kepentingan dan audiens",
-          "Konsep kampanye dan kerangka narasi",
+          "Konsep kampanye",
           "Penilaian risiko komunikasi",
         ],
         outcome:
-          "Arah komunikasi yang jelas dan dapat dijalankan secara konsisten oleh tim.",
+          "Arah komunikasi yang jelas dan bisa dijalankan tim secara konsisten.",
       },
       {
         id: "public-relations",
         number: "02",
         title: "Hubungan masyarakat",
         summary:
-          "Membangun hubungan media yang produktif dan menyampaikan informasi secara akurat, relevan, dan tepat waktu.",
+          "Membangun hubungan yang baik dengan media dan menyampaikan informasi secara akurat dan tepat waktu.",
         deliverables: [
-          "Hubungan media dan pendekatan kepada media",
+          "Hubungan dan pendekatan kepada media",
           "Siaran pers dan pernyataan media",
-          "Paket informasi media dan bahan pengarahan",
+          "Paket informasi dan bahan pengarahan",
           "Persiapan juru bicara dan wawancara",
-          "Dukungan pengelolaan reputasi dan respons isu",
+          "Dukungan reputasi dan respons isu",
         ],
         outcome:
           "Interaksi yang lebih terarah dengan media, pemangku kepentingan, dan publik.",
@@ -115,23 +112,23 @@ export const about: AboutContent = {
         number: "03",
         title: "Operasional media",
         summary:
-          "Membangun alur kerja, disiplin editorial, dan sistem pelaporan agar kanal komunikasi dikelola secara konsisten.",
+          "Menyusun alur kerja, disiplin editorial, dan pelaporan agar kanal komunikasi terkelola dengan konsisten.",
         deliverables: [
           "Kalender editorial dan perencanaan konten",
-          "Alur penerbitan dan mekanisme persetujuan",
-          "Koordinasi kanal dan operasional konten",
+          "Alur penerbitan dan jalur persetujuan",
+          "Koordinasi kanal dan konten",
           "Pemantauan dan pelaporan kinerja",
           "Dokumentasi operasional dan serah terima",
         ],
         outcome:
-          "Sistem kerja yang terstruktur dan dapat diulang untuk kebutuhan media sehari-hari.",
+          "Cara kerja yang terstruktur dan bisa diulang untuk kebutuhan media sehari-hari.",
       },
       {
         id: "content-production",
         number: "04",
         title: "Produksi konten dan editorial",
         summary:
-          "Menerjemahkan strategi menjadi konten yang koheren, relevan bagi audiens, dan sesuai dengan karakter setiap kanal.",
+          "Mengubah strategi menjadi konten yang koheren, relevan bagi audiens, dan sesuai karakter tiap kanal.",
         deliverables: [
           "Arahan editorial dan penulisan naskah",
           "Narasi korporasi dan institusional",
@@ -139,57 +136,56 @@ export const about: AboutContent = {
           "Adaptasi konten lintas kanal",
           "Peninjauan editorial dan kendali mutu",
         ],
-        outcome:
-          "Konten dengan tujuan yang jelas, bukan sekadar memenuhi kalender publikasi.",
+        outcome: "Konten yang punya tujuan jelas sebelum diproduksi.",
       },
     ],
   },
 
   standards: {
     heading: "Standar kerja",
-    body: "Standar berikut berlaku pada setiap tahap, dari perencanaan hingga evaluasi.",
+    body: "Standar ini berlaku di setiap tahap, dari perencanaan sampai evaluasi.",
     items: [
       {
         number: "01",
         title: "Akurasi",
-        body: "Fakta penting diverifikasi, informasi terkonfirmasi dibedakan dari interpretasi, dan kesalahan material diperbaiki ketika ditemukan.",
+        body: "Fakta penting kami periksa, informasi yang sudah terkonfirmasi kami bedakan dari tafsiran, dan kesalahan material kami perbaiki begitu ditemukan.",
       },
       {
         number: "02",
         title: "Konteks",
-        body: "Audiens, waktu, implikasi, dan latar belakang yang relevan dipertimbangkan sebelum pesan atau rekomendasi dirumuskan.",
+        body: "Audiens, waktu, dan latar belakang kami pertimbangkan sebelum pesan atau rekomendasi dirumuskan.",
       },
       {
         number: "03",
         title: "Akuntabilitas",
-        body: "Tanggung jawab, persetujuan, sumber, dan hasil kerja terdokumentasi cukup jelas untuk ditinjau dan dipertanggungjawabkan.",
+        body: "Penanggung jawab, persetujuan, sumber, dan hasil kerja tercatat cukup jelas untuk ditinjau.",
       },
       {
         number: "04",
         title: "Kerahasiaan",
-        body: "Informasi nonpublik klien hanya diakses sesuai otorisasi yang disepakati dan tidak dibagikan kepada unit usaha lain di bawah Barito Bahalap Agency.",
+        body: "Informasi klien yang belum dipublikasikan hanya diakses oleh orang yang mengerjakannya.",
       },
       {
         number: "05",
         title: "Independensi editorial",
-        body: "Keputusan editorial dan publikasi ditetapkan berdasarkan standar editorial Barito Bahalap Media dan ketentuan hukum yang berlaku, termasuk UU Pers untuk kegiatan penerbitan.",
+        body: "Keputusan editorial dan publikasi ditentukan oleh standar editorial Barito Bahalap Media dan hukum yang berlaku, termasuk UU Pers untuk kegiatan penerbitan.",
       },
       {
         number: "06",
         title: "Integritas",
-        body: "Kami menghindari klaim yang menyesatkan, bukti yang direkayasa, dan praktik komunikasi yang sengaja menyamarkan fakta penting.",
+        body: "Kami tidak membuat klaim yang menyesatkan, merekayasa bukti, atau menyamarkan fakta penting.",
       },
     ],
   },
 
   agency: {
     heading: "Bagian dari Barito Bahalap Agency",
-    body: "Barito Bahalap Media beroperasi sebagai unit komunikasi dan media di bawah Barito Bahalap Agency, yang menaungi tata kelola, kontrak, dan kepatuhan. Identitas, alur kerja, penanganan informasi klien, dan keputusan editorial Barito Bahalap Media dikelola terpisah dari unit usaha lain dalam grup.",
+    body: "Barito Bahalap Agency menaungi kontrak, keuangan, dan kepatuhan. Tim, alur kerja, data klien, dan keputusan editorial Barito Bahalap Media berjalan sendiri.",
   },
 
   engagement: {
-    heading: "Ruang lingkup yang jelas sebelum produksi dimulai.",
-    body: "Setiap kerja sama dimulai dengan penetapan tujuan, pemangku kepentingan, batasan, mekanisme persetujuan, dan indikator keberhasilan. Ruang lingkup dan hasil kerja disepakati sebelum pelaksanaan.",
+    heading: "Lingkup disepakati sebelum produksi dimulai.",
+    body: "Setiap kerja sama dimulai dari tujuan, pihak yang terlibat, batasan, jalur persetujuan, dan ukuran keberhasilan.",
     cta: {
       label: "Diskusikan kebutuhan Anda",
       href: "/contact",

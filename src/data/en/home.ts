@@ -1,63 +1,61 @@
 export const home = {
   seo: {
-    title:
-      "Barito Bahalap Media | Strategic communications and media operations",
+    title: "Barito Bahalap Media | Strategic Communications and Media",
     description:
-      "Strategic communications, public relations, and media operations for organizations that need clarity, credibility, and control.",
+      "Messaging strategy, media relations, content, and publishing for organizations, institutions, and public figures.",
   },
   hero: {
     eyebrow: "Barito Bahalap Media",
-    heading: ["Clarity is", "a strategic advantage."],
-    body: "We help organizations communicate with purpose, manage their public presence, and operate media with discipline.",
-    primaryCta: { label: "Discuss a brief", href: "/en/contact" },
-    secondaryCta: { label: "Explore services", href: "/en/about" },
-    note: "Strategy, narrative, and execution under one operating standard.",
+    heading: ["Help the public understand", "what you do."],
+    body: "We develop messaging, manage media relations, and oversee publications for organizations, institutions, and public figures.",
+    primaryCta: { label: "Tell us what you need", href: "/en/contact" },
+    secondaryCta: { label: "Explore our services", href: "/en/about" },
+    note: "Strategy, copywriting, and publishing handled by one team.",
   },
   positioning: {
     eyebrow: "What we do",
-    heading:
-      "Communication is not decoration. It is operational infrastructure.",
-    body: "Every public-facing message shapes trust, expectations, and decisions. We connect strategic intent to clear narratives, coordinated channels, and accountable execution.",
+    heading: "Every public statement shapes how people perceive you.",
+    body: "Press releases, social media posts, and interview responses all shape public perception. We ensure they remain consistent, accurate, and aligned with your organization's goals.",
   },
   capabilities: {
-    eyebrow: "Capabilities",
-    heading: "Built around the work that moves public understanding.",
+    eyebrow: "Services",
+    heading: "Three things we do.",
     items: [
       {
         number: "01",
-        title: "Strategic communications",
-        body: "Positioning, message architecture, stakeholder mapping, and communications planning.",
+        title: "Strategic Communications",
+        body: "Determining what to say, who to reach, and which channels to use.",
         href: "/en/about",
       },
       {
         number: "02",
-        title: "Public relations",
-        body: "Media relations, press materials, spokesperson preparation, and reputation support.",
+        title: "Public Relations",
+        body: "Media relations, press releases, and spokesperson preparation.",
         href: "/en/about",
       },
       {
         number: "03",
-        title: "Media operations",
-        body: "Editorial planning, publishing workflows, channel coordination, and reporting.",
+        title: "Media Operations",
+        body: "Content calendars, publishing workflows, and performance reporting.",
         href: "/en/about",
       },
     ],
   },
   method: {
     eyebrow: "Our approach",
-    heading: "Think clearly. Align the message. Execute with control.",
-    body: "We start with context and objectives, establish a shared narrative, then coordinate delivery and review what changes.",
-    cta: { label: "See our approach", href: "/en/about" },
+    heading: "From objectives to publication, in a clear sequence.",
+    body: "We start by understanding your organization and its goals. Then we develop the messaging, execute the publishing process, and evaluate the results.",
+    cta: { label: "See how we work", href: "/en/about" },
   },
   standards: {
-    eyebrow: "Our standard",
-    heading: "Credibility is earned through the details.",
-    body: "Accuracy, context, confidentiality, and accountability are working requirements, not optional extras.",
+    eyebrow: "Our standards",
+    heading: "Accuracy first, speed second.",
+    body: "We verify facts, consider context, and protect client information. These standards apply to every engagement.",
     cta: { label: "Read our standards", href: "/en/about" },
   },
   closing: {
-    heading: "Bring us the brief. We will help define the work.",
-    body: "Share your objectives, constraints, and timeline. We will determine the right scope and next step.",
+    heading: "Have something to communicate to the public?",
+    body: "Tell us your objectives and timeline. We'll help determine the first steps.",
     cta: { label: "Start a conversation", href: "/en/contact" },
   },
 } as const;

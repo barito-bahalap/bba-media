@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
-  min-height: 12rem;
   padding: 1.25rem;
   border: 1px solid var(--vt-rule);
   border-radius: var(--vt-radius);

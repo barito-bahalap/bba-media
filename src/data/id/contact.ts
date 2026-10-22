@@ -2,23 +2,23 @@ export const contact = {
   seo: {
     title: "Kontak | Barito Bahalap Media",
     description:
-      "Hubungi Barito Bahalap Media untuk mendiskusikan strategi komunikasi, hubungan masyarakat, atau operasi media.",
+      "Hubungi Barito Bahalap Media untuk membicarakan strategi komunikasi, hubungan masyarakat, atau operasi media.",
   },
   hero: {
     eyebrow: "Kontak",
-    heading: ["Mulai dari kebutuhan Anda."],
-    body: "Jelaskan perubahan yang ingin dicapai, pihak yang perlu dijangkau, dan batasan yang memengaruhi pekerjaan. Kami akan membantu merumuskan ruang lingkup yang realistis.",
+    heading: ["Ceritakan kebutuhan Anda."],
+    body: "Apa yang ingin dicapai, siapa yang perlu dijangkau, dan apa batasannya? Kami bantu merumuskan lingkup yang realistis.",
   },
   details: {
-    heading: "Percakapan awal yang bermanfaat",
-    body: "Ringkasan singkat sudah cukup untuk memulai. Sertakan konteks, tujuan, audiens, tenggat waktu, serta ketentuan persetujuan atau kerahasiaan yang sudah diketahui.",
+    heading: "Cukup ringkas",
+    body: "Ringkasan singkat sudah cukup. Konteks, tujuan, dan tenggat waktu membantu kami membalas dengan tepat.",
     emailLabel: "Email",
     email: "info@baritobahalap.com",
     parentLabel: "Agensi",
     parentName: "Barito Bahalap Agency",
   },
   form: {
-    heading: "Ceritakan kebutuhan Anda",
+    heading: "Kirim pesan",
     fields: {
       name: {
         label: "Nama",
@@ -35,7 +35,7 @@ export const contact = {
         required: "Silakan masukkan alamat email yang valid.",
       },
       service: {
-        label: "Bidang dukungan",
+        label: "Bidang yang dibutuhkan",
         placeholder: "Pilih layanan",
         options: [
           "Komunikasi strategis",
@@ -46,20 +46,20 @@ export const contact = {
         ],
       },
       message: {
-        label: "Ringkasan kebutuhan",
-        placeholder: "Konteks, tujuan, audiens, tenggat waktu, dan batasan",
-        required: "Silakan tuliskan ringkasan kebutuhan.",
+        label: "Kebutuhan Anda",
+        placeholder: "Tujuan, audiens, dan tenggat waktu",
+        required: "Silakan tuliskan kebutuhan Anda.",
       },
     },
-    consent: "Saya setuju untuk dihubungi terkait permintaan ini.",
-    consentRequired: "Persetujuan diperlukan untuk mengirim pertanyaan ini.",
+    consent: "Saya setuju dihubungi terkait permintaan ini.",
+    consentRequired: "Centang persetujuan untuk melanjutkan.",
     submit: "Kirim permintaan",
     submitting: "Mengirim…",
-    success: "Terima kasih. Permintaan Anda telah diterima.",
+    success: "Terima kasih. Permintaan Anda sudah kami terima.",
     error:
-      "Permintaan Anda belum dapat dikirim. Silakan coba lagi atau hubungi kami melalui email.",
+      "Permintaan belum terkirim. Coba lagi atau hubungi kami lewat email.",
     privacyNote:
-      "Informasi yang dikirim melalui formulir ini akan digunakan untuk menanggapi permintaan Anda.",
+      "Data dari formulir ini hanya dipakai untuk menanggapi permintaan Anda.",
   },
 } as const;
 
