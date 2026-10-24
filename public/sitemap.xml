@@ -30,16 +30,4 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://media.baritobahalap.com/contact"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://media.baritobahalap.com/en/contact"/>
   </url>
-  <url>
-    <loc>https://media.baritobahalap.com/privacy</loc>
-  </url>
-  <url>
-    <loc>https://media.baritobahalap.com/en/privacy</loc>
-  </url>
-  <url>
-    <loc>https://media.baritobahalap.com/terms</loc>
-  </url>
-  <url>
-    <loc>https://media.baritobahalap.com/en/terms</loc>
-  </url>
 </urlset>

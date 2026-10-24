@@ -8,14 +8,7 @@ const SITE = (
 const URL_ = process.env.VITE_SUPABASE_URL;
 const KEY = process.env.VITE_SUPABASE_ANON_KEY;
 
-const staticPaths = [
-  "/",
-  "/about",
-  "/contact",
-  "/insight",
-  "/privacy",
-  "/terms",
-];
+const staticPaths = ["/", "/about", "/contact", "/insight"];
 
 const esc = (s = "") =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");

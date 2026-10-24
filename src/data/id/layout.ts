@@ -47,8 +47,8 @@ export const layout = {
       {
         title: "Legal",
         links: [
-          { label: "Privasi", href: "/privacy" },
-          { label: "Ketentuan", href: "/terms" },
+          { label: "Privasi", href: "https://baritobahalap.com/privacy" },
+          { label: "Ketentuan", href: "https://baritobahalap.com/terms" },
         ],
       },
     ],
