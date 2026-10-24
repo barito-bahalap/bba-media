@@ -9,7 +9,7 @@ export const site = {
   locale: "id",
   language: "Bahasa Indonesia",
   defaultLocale: "id",
-  email: "info@baritobahalap.com",
+  email: "baritobahalapagency@gmail.com",
 
   navigation: [
     { label: "Beranda", href: "/" },

@@ -13,7 +13,7 @@ export const contact = {
     heading: "Cukup ringkas",
     body: "Ringkasan singkat sudah cukup. Konteks, tujuan, dan tenggat waktu membantu kami membalas dengan tepat.",
     emailLabel: "Email",
-    email: "info@baritobahalap.com",
+    email: "baritobahalapagency@gmail.com",
     parentLabel: "Agensi",
     parentName: "Barito Bahalap Agency",
   },

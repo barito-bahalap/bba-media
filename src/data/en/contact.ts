@@ -13,7 +13,7 @@ export const contact = {
     heading: "Keep it brief",
     body: "A short summary is enough. Context, objectives, and deadlines help us respond appropriately.",
     emailLabel: "Email",
-    email: "info@baritobahalap.com",
+    email: "baritobahalapagency@gmail.com",
     parentLabel: "Agency",
     parentName: "Barito Bahalap Agency",
   },

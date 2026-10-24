@@ -40,7 +40,7 @@ export const legal = {
         heading: "Your choices and contact",
         paragraphs: [
           "You may contact us to ask about information you have submitted or request correction or deletion where applicable. Some records may need to be retained to meet legal or operational obligations.",
-          "Contact: info@baritobahalap.com",
+          "Contact: baritobahalapagency@gmail.com",
         ],
       },
     ],
@@ -83,7 +83,7 @@ export const legal = {
       {
         heading: "Contact",
         paragraphs: [
-          "Questions about these terms may be sent to info@baritobahalap.com. Any specific engagement is governed by its separately agreed scope and terms.",
+          "Questions about these terms may be sent to baritobahalapagency@gmail.com. Any specific engagement is governed by its separately agreed scope and terms.",
         ],
       },
     ],

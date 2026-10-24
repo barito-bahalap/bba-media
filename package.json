@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@barito-bahalap/components": "^1.16.2",
-    "@barito-bahalap/config": "^1.2.0",
+    "@barito-bahalap/config": "^1.2.1",
     "@barito-bahalap/contexts": "^1.0.4",
     "@barito-bahalap/icons": "^1.1.2",
     "@barito-bahalap/styles": "^1.4.1",
