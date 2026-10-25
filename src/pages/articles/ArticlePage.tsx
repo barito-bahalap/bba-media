@@ -6,8 +6,8 @@ import "./ArticlePage.css";
 import { useArticlesIndex, useCorrections, useSiteContent } from "@/hooks";
 import { useArticle, useLocale } from "@/hooks";
 // Components
-import { Band, SEO, SmartLink } from "@/components";
-import { ArticleListItem } from "./_components";
+import { SEO, SmartLink } from "@/components";
+import { ArticleListItem, ArticlePageSkeleton } from "./_components";
 import NotFoundPage from "@/pages/404/NotFoundPage";
 // Utils
 import { formatDate, readingMinutes } from "@/domain/format";
@@ -27,13 +27,7 @@ export default function ArticlePage() {
   const { data: corrections } = useCorrections(article?.id);
   const { articles: index } = useArticlesIndex();
 
-  if (isLoading) {
-    return (
-      <Band>
-        <p className="vt-note">Memuat…</p>
-      </Band>
-    );
-  }
+  if (isLoading) return <ArticlePageSkeleton />;
   if (!article) return <NotFoundPage />;
 
   const path = `/insight/${article.slug}`;
