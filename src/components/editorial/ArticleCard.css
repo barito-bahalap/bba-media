@@ -45,6 +45,7 @@
   font-size: 1rem;
   line-height: 1.12;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .article-card__excerpt {

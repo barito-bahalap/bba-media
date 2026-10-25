@@ -1,21 +1,36 @@
 .insight {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 2.5rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.insight > * {
+  min-width: 0;
 }
 
 .insight__section {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
 }
 
 .insight__top,
 .insight__picks {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
+}
+
+.insight__top > *,
+.insight__picks > * {
+  min-width: 0;
 }
 
 .insight__side {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.25rem;
   align-content: start;
 }

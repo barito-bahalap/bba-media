@@ -1,10 +1,16 @@
 .article-hero {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 0;
+  min-width: 0;
 }
 
 .article-hero__img {
+  display: block;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  height: auto;
   aspect-ratio: 16 / 10;
   object-fit: cover;
   background-color: var(--vt-tint);
@@ -16,8 +22,10 @@
 
 .article-hero__card {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.75rem;
   align-content: start;
+  min-width: 0;
   padding: 1.25rem;
   border: 1px solid var(--vt-navy);
   border-top: 0;
@@ -54,6 +62,7 @@
   letter-spacing: -0.03em;
   line-height: 1;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .article-hero__link {
@@ -100,7 +109,6 @@
   .article-hero__img {
     grid-column: 3 / -1;
     grid-row: 1;
-    aspect-ratio: 16 / 10;
   }
 
   .article-hero__card {

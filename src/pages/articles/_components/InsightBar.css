@@ -2,6 +2,8 @@
   display: flex;
   align-items: stretch;
   min-height: 2.75rem;
+  min-width: 0;
+  max-width: 100%;
   border: 1px solid var(--vt-navy);
   background-color: var(--vt-paper);
 }
