@@ -34,7 +34,7 @@ export const layout = {
         title: "Agensi",
         links: [
           { label: "Beranda", href: "/" },
-          { label: "Wawasan", href: "/insight" },
+          { label: "Insight", href: "/insight" },
         ],
       },
       {

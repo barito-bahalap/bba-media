@@ -1,0 +1,91 @@
+.insight-bar {
+  display: flex;
+  align-items: stretch;
+  min-height: 2.75rem;
+  border: 1px solid var(--vt-navy);
+  background-color: var(--vt-paper);
+}
+
+.insight-bar__label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: none;
+  padding: 0 1rem;
+  background-color: var(--vt-navy);
+  color: #fff;
+}
+
+.insight-bar__title {
+  margin: 0;
+  font-family: var(--vt-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.insight-bar__caption {
+  display: none;
+  font-family: var(--vt-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.insight-bar__track {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  gap: 1.5rem;
+  padding: 0 1rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.insight-bar__track::-webkit-scrollbar {
+  display: none;
+}
+
+.insight-bar__item {
+  position: relative;
+  flex: none;
+  max-width: 28rem;
+  overflow: hidden;
+  color: var(--vt-navy);
+  font-family: var(--vt-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+}
+
+.insight-bar__item + .insight-bar__item {
+  padding-left: 1.5rem;
+}
+
+.insight-bar__item + .insight-bar__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0.375rem;
+  height: 0.375rem;
+  background-color: var(--vt-teal);
+  transform: translateY(-50%);
+}
+
+.insight-bar__item:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .insight-bar__caption {
+    display: inline;
+  }
+}

@@ -36,3 +36,11 @@ export const formatLongDate = (iso: string, locale: string): string =>
     month: "long",
     year: "numeric",
   });
+
+export const readingMinutes = (html: string, wpm = 200): number => {
+  const words = html
+    .replace(/<[^>]*>/g, " ")
+    .split(/\s+/)
+    .filter(Boolean).length;
+  return Math.max(1, Math.round(words / wpm));
+};

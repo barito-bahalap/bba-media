@@ -1,0 +1,44 @@
+.insight {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.insight__section {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.insight__top,
+.insight__picks {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.insight__side {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+}
+
+.insight__side > * + * {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--vt-line);
+}
+
+@media (min-width: 1024px) {
+  .insight {
+    gap: 4rem;
+  }
+
+  .insight__top {
+    grid-template-columns: minmax(0, 2.4fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .insight__picks {
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+  }
+}

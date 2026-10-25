@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import "./TileGrid.css";
 
 interface TileGridProps {
-  columns?: 2 | 3;
+  columns?: 2 | 3 | 4;
   children: ReactNode;
 }
 
