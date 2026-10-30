@@ -41,13 +41,15 @@ export default function ArticlePage() {
 
   return (
     <>
-      <SEO
+        <SEO
         {...seoBase}
         title={article.seo_title ?? article.title}
         description={
           article.seo_description ?? article.excerpt ?? site.description
         }
         path={path}
+        image={article.cover_url ?? undefined}
+        type="article"
         structuredData={articlePageSchema(site, article, [
           { name: "Home", path: "/" },
           { name: "Insight", path: "/insight" },

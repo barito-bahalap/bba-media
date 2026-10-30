@@ -73,7 +73,7 @@ export default function ArticlesPage() {
       <SEO
         {...seoBase}
         title={label}
-        description={`${label} dari Barito Bahalap Media.`}
+        description={`${label} | Barito Bahalap Media.`}
         path="/insight"
         structuredData={breadcrumbSchema(site, [
           { name: "Home", path: "/" },
