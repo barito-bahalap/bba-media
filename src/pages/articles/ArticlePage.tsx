@@ -79,7 +79,7 @@ export default function ArticlePage() {
                 </span>
               )}
             </p>
-            <h2 className="article__title">{article.title}</h2>
+            <h1 className="article__title">{article.title}</h1>
             {article.excerpt && (
               <p className="article__lede">{article.excerpt}</p>
             )}
