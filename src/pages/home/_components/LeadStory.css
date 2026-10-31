@@ -50,6 +50,7 @@
   letter-spacing: -0.02em;
   line-height: 1.05;
   text-transform: none;
+  text-transform: uppercase;
 }
 
 .lead-story__link:hover .lead-story__title {

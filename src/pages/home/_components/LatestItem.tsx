@@ -18,7 +18,7 @@ export function LatestItem({ index, story }: LatestItemProps) {
       <SmartLink href={story.href} className="latest-item__link">
         <span className="latest-item__index">{pad2(index + 1)}</span>
         <span className="latest-item__body">
-          <span className="latest-item__title">{story.title}</span>
+          <h4 className="latest-item__title">{story.title}</h4>
           <span className="latest-item__date">{story.date}</span>
         </span>
       </SmartLink>

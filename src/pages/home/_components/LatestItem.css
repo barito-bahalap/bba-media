@@ -26,12 +26,9 @@
 
 .latest-item__title {
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.25;
-}
-
-.latest-item__link:hover .latest-item__title {
-  text-decoration: underline;
+  text-transform: uppercase;
 }
 
 .latest-item__date {

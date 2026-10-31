@@ -46,7 +46,7 @@
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.15;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .side-story__link:hover .side-story__title {
