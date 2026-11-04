@@ -30,7 +30,7 @@ export const contact = {
         placeholder: "Organisasi atau perusahaan",
       },
       email: {
-        label: "Email kerja",
+        label: "Email",
         placeholder: "anda@organisasi.com",
         required: "Silakan masukkan alamat email yang valid.",
       },
@@ -48,7 +48,7 @@ export const contact = {
       message: {
         label: "Kebutuhan Anda",
         placeholder: "Tujuan, audiens, dan tenggat waktu",
-        required: "Silakan tuliskan kebutuhan Anda.",
+        required: "Silakan tuliskan kebutuhan Anda. Minimal 20 karakter.",
       },
     },
     consent: "Saya setuju dihubungi terkait permintaan ini.",

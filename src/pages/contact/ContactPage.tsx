@@ -6,9 +6,13 @@ import { shortTitle, useContactContent } from "@/hooks";
 import { useContactForm, useSiteContent } from "@/hooks";
 // Components
 import { Select, SplitSection, Textarea } from "@/components";
-import { Button, Checkbox, Input, PageHeader, SEO } from "@/components";
+import { Button, Input, PageHeader, SEO } from "@/components";
 // Utils
 import { breadcrumbSchema } from "@/domain/schema";
+
+const OPTIONAL_LABEL = "optional";
+const PREPARED_MESSAGE =
+  "Email Anda seharusnya terbuka dengan pesan yang sudah siap untuk dikirim. Jika tidak ada yang terbuka, pilih layanan email Anda:";
 
 export default function ContactPage() {
   const { site, seoBase, href } = useSiteContent();
@@ -29,19 +33,12 @@ export default function ContactPage() {
     ...inquiryTypes,
   ];
 
-  const {
-    values,
-    errors,
-    prepared,
-    handleChange,
-    handleConsent,
-    handleSubmit,
-  } = useContactForm(details.email, inquiryTypes, {
-    name: fields.name.required,
-    email: fields.email.required,
-    message: fields.message.required,
-    consent: form.consentRequired,
-  });
+  const { values, errors, prepared, links, handleChange, handleSubmit } =
+    useContactForm(details.email, inquiryTypes, {
+      name: fields.name.required,
+      email: fields.email.required,
+      message: fields.message.required,
+    });
 
   return (
     <>
@@ -94,7 +91,7 @@ export default function ContactPage() {
             <Input
               id="organization"
               name="organization"
-              label={fields.organization.label}
+              label={`${fields.organization.label} (${OPTIONAL_LABEL})`}
               autoComplete="organization"
               value={values.organization}
               error={errors.organization}
@@ -131,22 +128,43 @@ export default function ContactPage() {
             error={errors.message}
             onChange={handleChange}
           />
-          <Checkbox
-            id="consent"
-            label={form.consent}
-            checked={values.consent}
-            error={errors.consent}
-            onChange={handleConsent}
-          />
           <div>
             <Button type="submit" variant="primary" brand="media">
               {form.submit}
             </Button>
           </div>
-          {/* Opens the visitor's mail app. form.success/error need a real backend submit. */}
-          <p className="form-note" aria-live="polite">
-            {prepared ? details.email : form.privacyNote}
-          </p>
+          <div className="form-note" aria-live="polite">
+            {prepared && links ? (
+              <>
+                <p>{PREPARED_MESSAGE}</p>
+                <ul className="form-links" role="list">
+                  <li>
+                    <a
+                      href={links.gmail}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Gmail
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={links.outlook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Outlook
+                    </a>
+                  </li>
+                  <li>
+                    <a href={links.mailto}>Default email app</a>
+                  </li>
+                </ul>
+              </>
+            ) : (
+              <p>{form.privacyNote}</p>
+            )}
+          </div>
         </form>
       </SplitSection>
     </>

@@ -30,7 +30,7 @@ export const contact = {
         placeholder: "Organization or company",
       },
       email: {
-        label: "Work email",
+        label: "Email",
         placeholder: "you@organization.com",
         required: "Please enter a valid email address.",
       },
@@ -48,7 +48,7 @@ export const contact = {
       message: {
         label: "Your needs",
         placeholder: "Objectives, audience, and timeline",
-        required: "Please describe what you need.",
+        required: "Please describe what you need. Minimum 20 characters.",
       },
     },
     consent: "I agree to be contacted regarding this inquiry.",
