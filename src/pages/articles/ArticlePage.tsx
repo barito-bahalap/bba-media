@@ -98,7 +98,7 @@ export default function ArticlePage() {
             <figure className="article__cover">
               <img src={article.cover_url} alt={article.cover_alt ?? ""} />
               {article.cover_credit && (
-                <figcaption>{article.cover_credit}</figcaption>
+                <figcaption>Credit: {article.cover_credit}</figcaption>
               )}
             </figure>
           )}
