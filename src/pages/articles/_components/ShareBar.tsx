@@ -57,7 +57,15 @@ const TARGETS: {
 export function ShareBar({ url, title }: ShareBarProps) {
   const { locale } = useLocale();
   const [copied, setCopied] = useState(false);
-
+  const canNativeShare =
+    typeof navigator !== "undefined" && typeof navigator.share === "function";
+  const nativeShare = async () => {
+    try {
+      await navigator.share({ title, url });
+    } catch {
+      /* dismissed by user */
+    }
+  };
   const copyLink = async () => {
     try {
       await navigator.clipboard.writeText(url);
@@ -74,6 +82,17 @@ export function ShareBar({ url, title }: ShareBarProps) {
         {locale === "id" ? "Bagikan" : "Share"}
       </p>
       <div className="article__share-list">
+        {canNativeShare && (
+          <button
+            type="button"
+            className="article__share-btn"
+            onClick={nativeShare}
+            aria-label={locale === "id" ? "Bagikan" : "Share"}
+            title={locale === "id" ? "Bagikan" : "Share"}
+          >
+            <Icon iconName="share" fill="currentColor" size={16} />
+          </button>
+        )}
         {TARGETS.map((target) => (
           <a
             key={target.key}
