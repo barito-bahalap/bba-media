@@ -2,7 +2,7 @@ export const site = {
   name: "Barito Bahalap Media",
   shortName: "BBM",
   parentName: "Barito Bahalap Agency",
-  tagline: "Komunikasi strategis. Operasi media.",
+  tagline: "Komunikasi strategis & operasi media",
   description:
     "Barito Bahalap Media membantu organisasi membentuk pemahaman publik melalui komunikasi strategis, hubungan masyarakat, dan operasi media yang terukur.",
   url: "https://media.baritobahalap.com",
