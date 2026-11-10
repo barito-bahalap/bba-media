@@ -1,0 +1,94 @@
+.article__share {
+  display: flex;
+  align-items: start;
+  gap: 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--vt-line);
+}
+
+.article__share-label {
+  margin: 0;
+  color: var(--vt-muted);
+  font-family: var(--vt-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.article__share-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.article__share-btn {
+  --share-brand: var(--vt-navy);
+  --share-brand-ink: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  border: 1px solid var(--vt-line);
+  background-color: transparent;
+  color: var(--vt-navy);
+  font-family: var(--vt-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease,
+    border-color 140ms ease;
+}
+
+.article__share-btn--text {
+  padding: 0 0.9rem;
+}
+
+/* Brand colors (official hex values) */
+.article__share-btn[data-brand="whatsapp"] {
+  --share-brand: #25d366; 
+}
+.article__share-btn[data-brand="facebook"] {
+  --share-brand: #1877f2;
+}
+.article__share-btn[data-brand="x"] {
+  --share-brand: #000000;
+}
+.article__share-btn[data-brand="linkedin"] {
+  --share-brand: #0a66c2;
+}
+.article__share-btn[data-brand="telegram"] {
+  --share-brand: #229ed9;
+}
+
+.article__share-btn:hover,
+.article__share-btn:focus-visible {
+  border-color: var(--share-brand);
+  background-color: var(--share-brand);
+  color: var(--share-brand-ink);
+}
+
+.article__share-status {
+  color: var(--vt-teal);
+  font-family: var(--vt-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.article__share-btn[data-brand] {
+  border-color: var(--share-brand);
+  background-color: var(--share-brand);
+  color: var(--share-brand-ink);
+}
+
+.article__share-btn[data-brand]:hover,
+.article__share-btn[data-brand]:focus-visible {
+  filter: brightness(0.88);
+}

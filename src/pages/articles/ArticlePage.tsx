@@ -7,7 +7,7 @@ import { useArticlesIndex, useCorrections, useSiteContent } from "@/hooks";
 import { useArticle, useLocale } from "@/hooks";
 // Components
 import { SEO, SmartLink } from "@/components";
-import { ArticleListItem, ArticlePageSkeleton } from "./_components";
+import { ArticleListItem, ArticlePageSkeleton, ShareBar } from "./_components";
 import NotFoundPage from "@/pages/404/NotFoundPage";
 // Utils
 import { formatDate, readingMinutes } from "@/domain/format";
@@ -31,6 +31,7 @@ export default function ArticlePage() {
   if (!article) return <NotFoundPage />;
 
   const path = `/insight/${article.slug}`;
+  const shareUrl = `${window.location.origin}${path}`;
   const minutes = readingMinutes(article.body_html);
 
   const others = index.filter((item) => item.id !== article.id);
@@ -41,7 +42,7 @@ export default function ArticlePage() {
 
   return (
     <>
-        <SEO
+      <SEO
         {...seoBase}
         title={article.seo_title ?? article.title}
         description={
@@ -116,12 +117,16 @@ export default function ArticlePage() {
                 </aside>
               )}
 
+              <ShareBar url={shareUrl} title={article.title} />
+
               <div
                 className="article__body"
                 dangerouslySetInnerHTML={{
                   __html: DOMPurify.sanitize(article.body_html),
                 }}
               />
+
+              <ShareBar url={shareUrl} title={article.title} />
             </div>
 
             {related.length > 0 && (
