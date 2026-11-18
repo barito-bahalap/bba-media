@@ -35,7 +35,7 @@ export function IntroSection({
       <div className="vt-wrap intro__inner">
         <div className="intro__copy">
           <IndexLabel index={1} label={eyebrow} />
-          <h1 className="intro__title">{heading}</h1>
+          <h6 className="intro__title">{heading}</h6>
           <p className="intro__body">{body}</p>
           <div className="intro__actions">
             <Button href={primaryCta.href} variant="primary" brand="media">
@@ -48,7 +48,12 @@ export function IntroSection({
         </div>
 
         <div className="intro__media">
-          <img className="intro__img" src={image} alt="" loading="eager" />
+          <img
+            className="intro__img"
+            src={image}
+            alt="BBM Banner"
+            loading="eager"
+          />
           <div className="intro__card">
             <FloatCard label={cardLabel} rows={cardRows} />
           </div>

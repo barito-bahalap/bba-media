@@ -14,19 +14,10 @@
   justify-items: start;
 }
 
-.intro__title {
-  max-width: 14ch;
-  margin: 0;
-  font-size: clamp(2rem, 8vw, 3.75rem);
-  letter-spacing: -0.035em;
-  line-height: 0.98;
-}
-
 .intro__body {
-  max-width: 44ch;
+  max-width: 64ch;
   margin: 0;
   color: var(--vt-ink-soft);
-  font-size: 0.875rem;
   line-height: 1.6;
 }
 
@@ -67,7 +58,7 @@
   }
 
   .intro__copy {
-    align-content: space-between;
+    align-content: center;
   }
 
   .intro__card {

@@ -44,7 +44,7 @@ export default function HomePage() {
         body={hero.body}
         primaryCta={hero.primaryCta}
         secondaryCta={hero.secondaryCta}
-        image={HomeImages.hero}
+        image={HomeImages.bbmNeonBanner}
         cardLabel={labels.capabilities}
         cardRows={capabilities.items.slice(0, 3).map((item) => ({
           label: String(item.number),
