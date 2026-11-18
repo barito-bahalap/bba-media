@@ -1,14 +1,12 @@
 // Style
 import "./HomePage.css";
 // Hooks
-import { useHomeNews, useSelectedIndex } from "@/hooks";
-import { useSiteContent, useWordmark } from "@/hooks";
+import { useSiteContent, useWordmark, useHomeNews } from "@/hooks";
 import { useHomeContent, useLocale } from "@/hooks";
 // Components
 import { ClosingBand, SEO } from "@/components";
-import { CapabilitiesSection, NewsroomSection } from "./_components";
-import { MethodSection, StatementSection } from "./_components";
-import { IntroSection, MastheadSection, BannerSection } from "./_components";
+import { MethodSection, NewsroomSection } from "./_components";
+import { IntroSection, MastheadSection } from "./_components";
 // Utils
 import { HOME_LABELS } from "@/data/labels";
 import { homeSchema } from "@/domain/schema";
@@ -21,9 +19,7 @@ export default function HomePage() {
   const home = useHomeContent();
   const news = useHomeNews();
   const { boxRef: mastRef, lines: mastLines } = useWordmark(site.name, 17);
-  const { index: capabilityIndex, select: selectCapability } =
-    useSelectedIndex();
-  const { hero, positioning, capabilities, method, standards, closing } = home;
+  const { hero, capabilities, method, closing } = home;
   const labels = HOME_LABELS[locale === "en" ? "en" : "id"];
 
   return (
@@ -54,33 +50,6 @@ export default function HomePage() {
           label: String(item.number),
           value: item.title,
         }))}
-      />
-
-      <StatementSection
-        eyebrow={positioning.eyebrow}
-        heading={positioning.heading}
-        body={positioning.body}
-      />
-
-      <BannerSection
-        eyebrow={standards.eyebrow}
-        heading={standards.heading}
-        body={standards.body}
-        cta={standards.cta}
-        image={HomeImages.banner}
-      />
-
-      <CapabilitiesSection
-        eyebrow={capabilities.eyebrow}
-        heading={capabilities.heading}
-        items={capabilities.items}
-        images={[
-          HomeImages.capabilities1,
-          HomeImages.capabilities2,
-          HomeImages.capabilities3,
-        ]}
-        selected={capabilityIndex}
-        onSelect={selectCapability}
       />
 
       {news.lead && (

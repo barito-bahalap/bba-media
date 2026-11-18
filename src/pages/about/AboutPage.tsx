@@ -2,13 +2,18 @@
 import "./AboutPage.css";
 // Hooks
 import { shortTitle, useAboutContent, useSiteContent } from "@/hooks";
+import { useSelectedIndex, useHomeContent } from "@/hooks";
 // Components
 import { Band, BulletList, ClosingBand, PageHeader, SEO } from "@/components";
 import { SplitSection, Tile, TileGrid } from "@/components";
+import { CapabilitiesSection, BannerSection } from "./_components";
+// import { StatementSection } from "./_components";
 // Utils
 import { pickAt } from "@/domain/format";
 import { breadcrumbSchema } from "@/domain/schema";
 import { PRINCIPLE_TONES, STANDARD_TONES, VALUE_TONES } from "@/data/constants";
+// Assets
+import { HomeImages } from "@/assets";
 
 export default function AboutPage() {
   const { site, seoBase, href } = useSiteContent();
@@ -23,6 +28,10 @@ export default function AboutPage() {
     agency,
     engagement,
   } = useAboutContent();
+  const { index: capabilityIndex, select: selectCapability } =
+    useSelectedIndex();
+  const home = useHomeContent();
+  const { capabilities, standards: homeStandards } = home;
 
   const title = shortTitle(seo.title);
 
@@ -46,6 +55,12 @@ export default function AboutPage() {
         tone="indigo"
       />
 
+      {/* <StatementSection
+        eyebrow={positioning.eyebrow}
+        heading={positioning.heading}
+        body={positioning.body}
+      /> */}
+
       <SplitSection title={story.heading}>
         {story.paragraphs.map((paragraph) => (
           <p key={paragraph} className="vt-prose">
@@ -53,6 +68,14 @@ export default function AboutPage() {
           </p>
         ))}
       </SplitSection>
+
+      <BannerSection
+        eyebrow={homeStandards.eyebrow}
+        heading={homeStandards.heading}
+        body={homeStandards.body}
+        cta={homeStandards.cta}
+        image={HomeImages.banner}
+      />
 
       <Band tone="paper">
         <h2 className="vt-section-title">{values.heading}</h2>
@@ -88,6 +111,19 @@ export default function AboutPage() {
           })}
         </ol>
       </SplitSection>
+
+      <CapabilitiesSection
+        eyebrow={capabilities.eyebrow}
+        heading={capabilities.heading}
+        items={capabilities.items}
+        images={[
+          HomeImages.capabilities1,
+          HomeImages.capabilities2,
+          HomeImages.capabilities3,
+        ]}
+        selected={capabilityIndex}
+        onSelect={selectCapability}
+      />
 
       <Band id="services" tone="paper">
         <div className="about-intro">
