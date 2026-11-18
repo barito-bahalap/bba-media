@@ -1,6 +1,7 @@
 import { supabase } from "@barito-bahalap/supabase";
 import type {
   Article,
+  ArticleIndexItem,
   ArticleSummary,
   Category,
   Correction,
@@ -9,6 +10,19 @@ import type {
 
 const SUMMARY_COLUMNS =
   "id,slug,title,excerpt,kind,sponsor_name,published_at,category_slug,category_name,author_slug,author_name,cover_url,cover_alt,cover_credit";
+
+const INDEX_COLUMNS = `${SUMMARY_COLUMNS},seo_title,seo_description`;
+const INDEX_LIMIT = 1000;
+
+export async function fetchAllArticles(): Promise<ArticleIndexItem[]> {
+  const { data, error } = await client()
+    .from("published_articles")
+    .select(INDEX_COLUMNS)
+    .order("published_at", { ascending: false })
+    .limit(INDEX_LIMIT);
+  if (error) throw error;
+  return (data ?? []) as ArticleIndexItem[];
+}
 
 function client() {
   if (!supabase) throw new Error("Newsroom backend is not configured.");

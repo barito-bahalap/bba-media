@@ -1,0 +1,135 @@
+.search-bar {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.search-bar__field {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  padding: 0 1rem;
+  border: 1px solid var(--vt-navy);
+  background-color: var(--vt-paper);
+  color: var(--vt-navy);
+}
+
+.search-bar__field:focus-within {
+  outline: 2px solid var(--vt-teal);
+  outline-offset: 2px;
+}
+
+.search-bar__icon {
+  flex: none;
+}
+
+.search-bar__input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--vt-navy);
+  font-family: var(--vt-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+.search-bar__input::placeholder {
+  color: var(--vt-navy);
+  opacity: 0.55;
+}
+
+.search-bar__clear,
+.search-bar__hint {
+  flex: none;
+  font-family: var(--vt-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.search-bar__clear {
+  padding: 0.25rem 0;
+  color: var(--vt-navy);
+}
+
+.search-bar__clear:hover {
+  text-decoration: underline;
+}
+
+.search-bar__hint {
+  display: none;
+  padding: 0.125rem 0.4rem;
+  border: 1px solid var(--vt-line);
+  opacity: 0.7;
+}
+
+.search-bar__list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  margin: -1px 0 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--vt-navy);
+  background-color: var(--vt-paper);
+}
+
+.search-bar__option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--vt-line);
+}
+
+.search-bar__option.is-active {
+  background-color: var(--vt-navy);
+  color: #fff;
+}
+
+.search-bar__option-title {
+  font-size: 0.875rem;
+  line-height: 1.35;
+}
+
+.search-bar__option-meta {
+  font-family: var(--vt-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.search-bar__mark {
+  background-color: transparent;
+  color: inherit;
+  font-weight: 700;
+  box-shadow: inset 0 -0.35em 0 rgba(36, 177, 177, 0.35);
+}
+
+.search-bar__option.is-active .search-bar__mark {
+  box-shadow: inset 0 -0.35em 0 var(--vt-teal);
+}
+
+.search-bar__footer {
+  padding: 0.5rem 1rem;
+  font-family: var(--vt-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+@media (min-width: 768px) {
+  .search-bar__hint {
+    display: inline-block;
+  }
+}

@@ -46,3 +46,6 @@ export interface NewsroomSettings {
   legal_entity_name: string | null;
   correction_email: string | null;
 }
+
+export type ArticleIndexItem = ArticleSummary &
+  Pick<Article, "seo_title" | "seo_description">;

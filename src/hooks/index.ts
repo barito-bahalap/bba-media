@@ -8,3 +8,4 @@ export * from "./useSelectedIndex";
 export * from "./useWordmark";
 export * from "./useArticlesIndex";
 export * from "./useHomeNews";
+export * from "./useArticleSearch";

@@ -1,7 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchArticle, fetchArticles } from "@/services/articles";
-import { fetchCategories, fetchCorrections } from "@/services/articles";
-import { fetchSettings } from "@/services/articles";
+import {
+  fetchAllArticles,
+  fetchArticle,
+  fetchArticles,
+  fetchCategories,
+  fetchCorrections,
+  fetchSettings,
+} from "@/services/articles";
 
 export function useNewsroomSettings() {
   return useQuery({ queryKey: ["settings"], queryFn: fetchSettings });
@@ -15,6 +20,14 @@ export function useArticles(category?: string) {
   return useQuery({
     queryKey: ["articles", category ?? "all"],
     queryFn: () => fetchArticles({ category }),
+  });
+}
+
+export function useAllArticles() {
+  return useQuery({
+    queryKey: ["articles", "index"],
+    queryFn: fetchAllArticles,
+    staleTime: 5 * 60 * 1000,
   });
 }
 
